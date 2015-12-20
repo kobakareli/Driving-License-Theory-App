@@ -5,7 +5,7 @@
 
   თორნიკე მანძულაშვილი - TMandzu - tmand13@freeuni.edu.ge
 
-  კობა ქარელი - koabakareli - kkare13@freeuni.edu.ge
+  კობა ქარელი - kobabakareli - kkare13@freeuni.edu.ge
 
 აპლიკაციის მთავარ გვერდზე იქნება 2 ტაბი. 
 პირველ ტაბზე იქნება "მთავარი მენიუ" (main menu). მთავარ მენიუზე იქნება 2 ღილაკი, 
