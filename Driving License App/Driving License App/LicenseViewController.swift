@@ -19,5 +19,18 @@ class LicenseViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destination = segue.destinationViewController as? ExamViewController {
+            if let identifier = segue.identifier {
+                if identifier == "exam" {
+                    destination.examMode = true
+                }
+            }
+        }
+    }
+
 }
 

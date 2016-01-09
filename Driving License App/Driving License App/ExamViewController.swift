@@ -10,12 +10,17 @@ import UIKit
 
 class ExamViewController: UIViewController {
     
+    var examMode = false
     var myTimer = NSTimer()
     var minutes = 30
     var timeCount = 0
     
     @IBOutlet weak var timer: UILabel!
 
+    @IBOutlet weak var questionNum: UILabel!
+    
+    @IBOutlet weak var wrongAnswers: UILabel!
+    
     func elapse() {
         timeCount -= 1
         var text = ""
@@ -39,9 +44,11 @@ class ExamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeCount = minutes*60
-        timer.text = "\(minutes):00"
-        myTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("elapse"), userInfo: nil, repeats: true)
+        if examMode {
+            timeCount = minutes*60
+            timer.text = "\(minutes):00"
+            myTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("elapse"), userInfo: nil, repeats: true)
+        }
         // Do any additional setup after loading the view.
     }
     
