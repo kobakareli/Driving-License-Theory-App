@@ -52,6 +52,40 @@ class ExamViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 6
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var c = UITableViewCell()
+        if indexPath.row == 0 {
+            if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
+                c = cell
+            }
+        }
+        if indexPath.row == 1 {
+            if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
+                cell.textLabel?.text = "Question"
+                c = cell
+            }
+
+        }
+        if indexPath.row > 1 {
+            if let cell = tableView.dequeueReusableCellWithIdentifier("answer", forIndexPath: indexPath) as UITableViewCell? {
+                cell.textLabel?.text = "Answer"
+                c = cell
+            }
+        }
+        return c
+    }
+
 
     /*
     // MARK: - Navigation
