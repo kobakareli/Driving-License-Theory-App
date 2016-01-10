@@ -14,9 +14,12 @@
 		0110BB7E1C3E5EC800688BC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0110BB7C1C3E5EC800688BC3 /* LaunchScreen.storyboard */; };
 		0110BB891C3E5EC800688BC3 /* Driving_License_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110BB881C3E5EC800688BC3 /* Driving_License_AppTests.swift */; };
 		0110BB941C3E5EC800688BC3 /* Driving_License_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110BB931C3E5EC800688BC3 /* Driving_License_AppUITests.swift */; };
-		01795FC81C3FCC20000D80FD /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01795FC71C3FCC20000D80FD /* ExamViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		01E1835A1C40F553001DD804 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E183591C40F553001DD804 /* CategoryTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		01E1835E1C41158E001DD804 /* StatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E1835D1C41158E001DD804 /* StatTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		01795FC81C3FCC20000D80FD /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01795FC71C3FCC20000D80FD /* ExamViewController.swift */; };
+		01E1835A1C40F553001DD804 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E183591C40F553001DD804 /* CategoryTableViewController.swift */; };
+		01E1835E1C41158E001DD804 /* StatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E1835D1C41158E001DD804 /* StatTableViewController.swift */; };
+		838D35811C4199680040FE27 /* TheoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838D35801C4199680040FE27 /* TheoryViewController.swift */; };
+		838D35831C41B4870040FE27 /* Theory in Resources */ = {isa = PBXBuildFile; fileRef = 838D35821C41B4860040FE27 /* Theory */; };
+		838D35871C41BBAC0040FE27 /* TheoryPdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		01795FC71C3FCC20000D80FD /* ExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 		01E183591C40F553001DD804 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		01E1835D1C41158E001DD804 /* StatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatTableViewController.swift; sourceTree = "<group>"; };
+		838D35801C4199680040FE27 /* TheoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheoryViewController.swift; sourceTree = "<group>"; };
+		838D35821C41B4860040FE27 /* Theory */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Theory; sourceTree = "<group>"; };
+		838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheoryPdfViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,8 @@
 		0110BB721C3E5EC800688BC3 /* Driving License App */ = {
 			isa = PBXGroup;
 			children = (
+				838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */,
+				838D35821C41B4860040FE27 /* Theory */,
 				0110BB731C3E5EC800688BC3 /* AppDelegate.swift */,
 				0110BB751C3E5EC800688BC3 /* LicenseViewController.swift */,
 				0110BB771C3E5EC800688BC3 /* Main.storyboard */,
@@ -112,6 +120,7 @@
 				0110BB7A1C3E5EC800688BC3 /* Assets.xcassets */,
 				0110BB7C1C3E5EC800688BC3 /* LaunchScreen.storyboard */,
 				0110BB7F1C3E5EC800688BC3 /* Info.plist */,
+				838D35801C4199680040FE27 /* TheoryViewController.swift */,
 			);
 			path = "Driving License App";
 			sourceTree = "<group>";
@@ -238,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0110BB7E1C3E5EC800688BC3 /* LaunchScreen.storyboard in Resources */,
+				838D35831C41B4870040FE27 /* Theory in Resources */,
 				0110BB7B1C3E5EC800688BC3 /* Assets.xcassets in Resources */,
 				0110BB791C3E5EC800688BC3 /* Main.storyboard in Resources */,
 			);
@@ -267,8 +277,10 @@
 				01E1835E1C41158E001DD804 /* StatTableViewController.swift in Sources */,
 				0110BB761C3E5EC800688BC3 /* LicenseViewController.swift in Sources */,
 				0110BB741C3E5EC800688BC3 /* AppDelegate.swift in Sources */,
+				838D35871C41BBAC0040FE27 /* TheoryPdfViewController.swift in Sources */,
 				01795FC81C3FCC20000D80FD /* ExamViewController.swift in Sources */,
 				01E1835A1C40F553001DD804 /* CategoryTableViewController.swift in Sources */,
+				838D35811C4199680040FE27 /* TheoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

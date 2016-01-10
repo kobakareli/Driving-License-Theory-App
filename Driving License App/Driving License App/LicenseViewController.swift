@@ -20,7 +20,13 @@ class LicenseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
     
+    override func viewWillDisappear(animated: Bool){
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destination = segue.destinationViewController as? ExamViewController {
@@ -30,6 +36,7 @@ class LicenseViewController: UIViewController {
                 }
             }
         }
+        
     }
 
 }
