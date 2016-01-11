@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2499" y="171"/>
+            <point key="canvasLocation" x="2523" y="-537"/>
         </scene>
         <!--Exam View Controller-->
         <scene sceneID="mAr-je-y2R">
@@ -373,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3s-Hl-mwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3228" y="171"/>
+            <point key="canvasLocation" x="3372" y="-525"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oRd-Jg-asx">
@@ -390,25 +390,25 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7n-B6-bEs">
                                 <rect key="frame" x="30" y="84" width="82" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrj-AQ-nqu">
                                 <rect key="frame" x="30" y="128" width="82" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qci-HH-Eg1">
                                 <rect key="frame" x="30" y="172" width="82" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKL-Yi-2hv">
                                 <rect key="frame" x="30" y="216" width="82" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iaA-ge-b8I">
@@ -466,7 +466,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pB-wq-sbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3228" y="847"/>
+            <point key="canvasLocation" x="3842" y="61"/>
         </scene>
         <!--Category Table View Controller-->
         <scene sceneID="gw6-ft-1he">
@@ -514,7 +514,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLA-Ci-yP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2615" y="1103"/>
+            <point key="canvasLocation" x="2243" y="1115"/>
         </scene>
         <!--Theory View Controller-->
         <scene sceneID="yif-Wl-7up">
@@ -528,57 +528,239 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road2" translatesAutoresizingMaskIntoConstraints="NO" id="l6m-Fk-fzi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="road2" translatesAutoresizingMaskIntoConstraints="NO" id="l6m-Fk-fzi">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="საგზაო ნიშნები:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2K-4u-7N4">
-                                <rect key="frame" x="20" y="72" width="160" height="21"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uKv-84-G6e">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSu-P0-iL0">
+                                        <rect key="frame" x="197" y="251" width="206" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="1tN-x5-bSv"/>
+                                            <constraint firstAttribute="height" constant="34" id="oVw-sJ-HE4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="საგზაო მონიშვნები"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="oVw-sJ-HE4"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="pLV-3Q-gat" kind="show" identifier="საგზაო მონიშვნები" id="vsm-Yd-H5S"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="წესები:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9d-W2-a0s">
+                                        <rect key="frame" x="220" y="419" width="160" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="U3t-PK-zHX"/>
+                                            <constraint firstAttribute="width" constant="160" id="pzg-Vu-CtE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="pzg-Vu-CtE"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERX-TP-l0g">
+                                        <rect key="frame" x="146" y="444" width="308" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="კანონი საგზაო მოძრაობის შესახებ"/>
+                                        <connections>
+                                            <segue destination="pLV-3Q-gat" kind="show" identifier="კანონი საგზაო მოძრაობის შესახებ" id="mo4-Ao-e1t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWx-Ge-evc">
+                                        <rect key="frame" x="197" y="117" width="206" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="Qxg-IN-MTj"/>
+                                            <constraint firstAttribute="height" constant="34" id="qyv-o9-Mra"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="ამკრძალავი"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="qyv-o9-Mra"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="pLV-3Q-gat" kind="show" identifier="ამკრძალავი" id="wDP-qu-xYv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53G-fe-zrM">
+                                        <rect key="frame" x="197" y="159" width="206" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="NhC-NB-LQd"/>
+                                            <constraint firstAttribute="height" constant="34" id="j58-Xr-AoE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="მიმთითებელი"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="j58-Xr-AoE"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="pLV-3Q-gat" kind="show" identifier="მიმთითებელი" id="w0j-7G-Ebc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biy-RV-FrK">
+                                        <rect key="frame" x="171" y="201" width="259" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="L8G-j9-eDf"/>
+                                            <constraint firstAttribute="height" constant="34" id="TP7-r3-sAa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="საინფორმაციო-მაჩვენებელი"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="L8G-j9-eDf"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="pLV-3Q-gat" kind="show" identifier="საინფორმაციო-მაჩვენებელი" id="2QC-If-bx5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm9-OD-WV4">
+                                        <rect key="frame" x="197" y="293" width="206" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="სერვისის"/>
+                                        <connections>
+                                            <segue destination="pLV-3Q-gat" kind="show" identifier="სერვისის" id="PzA-Zw-wdg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSY-pd-9Ib">
+                                        <rect key="frame" x="179" y="335" width="242" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="დამატებითი ინფორმაციის"/>
+                                        <connections>
+                                            <segue destination="pLV-3Q-gat" kind="show" identifier="დამატებითი ინფორმაციის" id="4OP-X6-JYt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlY-b3-uj5">
+                                        <rect key="frame" x="197" y="377" width="206" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="შუქნიშნის სიგნალები"/>
+                                        <connections>
+                                            <segue destination="pLV-3Q-gat" kind="show" identifier="შუქნიშნის სიგნალები" id="VU6-2k-MWe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bid-Wb-lN6">
+                                        <rect key="frame" x="197" y="75" width="206" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="6o2-G1-iqk"/>
+                                            <constraint firstAttribute="height" constant="34" id="egP-iA-2bs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="პრიორიტეტის"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="6o2-G1-iqk"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="pLV-3Q-gat" kind="show" identifier="პრიორიტეტის" id="TNY-YD-CZS"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="საგზაო ნიშნები:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2K-4u-7N4">
+                                        <rect key="frame" x="220" y="8" width="160" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="kuO-4l-lvl"/>
+                                            <constraint firstAttribute="width" constant="160" id="m0c-Of-FJ7"/>
+                                            <constraint firstAttribute="height" constant="34" id="mNj-dU-T3b"/>
+                                            <constraint firstAttribute="height" constant="17" id="zID-ff-dGi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="kuO-4l-lvl"/>
+                                                <exclude reference="mNj-dU-T3b"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkA-yz-hqk">
+                                        <rect key="frame" x="197" y="33" width="206" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="0Rg-fl-sFW"/>
+                                            <constraint firstAttribute="height" constant="30" id="62W-nS-bEV"/>
+                                            <constraint firstAttribute="width" constant="206" id="Bxv-4u-dYn"/>
+                                            <constraint firstAttribute="height" constant="30" id="MxM-zv-S4u"/>
+                                            <constraint firstAttribute="width" constant="206" id="zcb-AP-klA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="მაფრთხილებელი"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="62W-nS-bEV"/>
+                                                <exclude reference="Bxv-4u-dYn"/>
+                                                <exclude reference="MxM-zv-S4u"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="pLV-3Q-gat" kind="show" identifier="მაფრთხილებელი" id="kIg-62-ck8"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvN-PU-ZPv">
+                                        <rect key="frame" x="146" y="486" width="308" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="kuO-4l-lvl"/>
+                                    <constraint firstItem="53G-fe-zrM" firstAttribute="trailing" secondItem="MWx-Ge-evc" secondAttribute="trailing" id="0me-ei-zti"/>
+                                    <constraint firstItem="gm9-OD-WV4" firstAttribute="centerX" secondItem="aSY-pd-9Ib" secondAttribute="centerX" id="1C1-lz-itc"/>
+                                    <constraint firstAttribute="bottom" secondItem="ERX-TP-l0g" secondAttribute="bottom" constant="-6" id="3sD-1v-OGY"/>
+                                    <constraint firstItem="Q2K-4u-7N4" firstAttribute="leading" secondItem="f9d-W2-a0s" secondAttribute="leading" id="5CT-Iq-4TQ"/>
+                                    <constraint firstItem="Bid-Wb-lN6" firstAttribute="top" secondItem="DkA-yz-hqk" secondAttribute="bottom" constant="8" symbolic="YES" id="5XP-bT-1IL"/>
+                                    <constraint firstItem="NSu-P0-iL0" firstAttribute="top" secondItem="biy-RV-FrK" secondAttribute="bottom" constant="16" id="CK9-rc-drU"/>
+                                    <constraint firstItem="gm9-OD-WV4" firstAttribute="trailing" secondItem="vlY-b3-uj5" secondAttribute="trailing" id="Dwy-Xy-4if"/>
+                                    <constraint firstItem="Bid-Wb-lN6" firstAttribute="leading" secondItem="DkA-yz-hqk" secondAttribute="leading" id="EBi-2Q-1us"/>
+                                    <constraint firstItem="MWx-Ge-evc" firstAttribute="top" secondItem="Bid-Wb-lN6" secondAttribute="bottom" constant="8" symbolic="YES" id="F5O-TC-oo1"/>
+                                    <constraint firstItem="aSY-pd-9Ib" firstAttribute="top" secondItem="gm9-OD-WV4" secondAttribute="bottom" constant="8" symbolic="YES" id="Fiq-KC-kpf"/>
+                                    <constraint firstItem="MWx-Ge-evc" firstAttribute="trailing" secondItem="Bid-Wb-lN6" secondAttribute="trailing" id="GNd-LK-5Qb"/>
+                                    <constraint firstItem="gm9-OD-WV4" firstAttribute="trailing" secondItem="NSu-P0-iL0" secondAttribute="trailing" id="H2n-ZJ-IOX"/>
+                                    <constraint firstItem="biy-RV-FrK" firstAttribute="centerX" secondItem="53G-fe-zrM" secondAttribute="centerX" id="Ib0-im-WLP"/>
+                                    <constraint firstItem="53G-fe-zrM" firstAttribute="trailing" secondItem="NSu-P0-iL0" secondAttribute="trailing" id="K4Q-WC-t8W"/>
+                                    <constraint firstItem="ERX-TP-l0g" firstAttribute="top" secondItem="f9d-W2-a0s" secondAttribute="bottom" constant="8" symbolic="YES" id="Kif-ze-2fm"/>
+                                    <constraint firstItem="Q2K-4u-7N4" firstAttribute="trailing" secondItem="f9d-W2-a0s" secondAttribute="trailing" id="NAe-42-Zmq"/>
+                                    <constraint firstItem="vlY-b3-uj5" firstAttribute="top" secondItem="aSY-pd-9Ib" secondAttribute="bottom" constant="8" symbolic="YES" id="QOw-yb-hFc"/>
+                                    <constraint firstItem="53G-fe-zrM" firstAttribute="top" secondItem="MWx-Ge-evc" secondAttribute="bottom" constant="8" symbolic="YES" id="Qco-WZ-3dW"/>
+                                    <constraint firstItem="vlY-b3-uj5" firstAttribute="leading" secondItem="gm9-OD-WV4" secondAttribute="leading" id="S9c-pE-s57"/>
+                                    <constraint firstItem="biy-RV-FrK" firstAttribute="top" secondItem="53G-fe-zrM" secondAttribute="bottom" constant="8" symbolic="YES" id="T1O-RV-NmE"/>
+                                    <constraint firstItem="Bid-Wb-lN6" firstAttribute="centerX" secondItem="uKv-84-G6e" secondAttribute="centerX" id="X5t-Qp-b3B"/>
+                                    <constraint firstItem="gm9-OD-WV4" firstAttribute="leading" secondItem="NSu-P0-iL0" secondAttribute="leading" id="XWB-rM-2Mg"/>
+                                    <constraint firstItem="MWx-Ge-evc" firstAttribute="leading" secondItem="Bid-Wb-lN6" secondAttribute="leading" id="YfR-SG-oRV"/>
+                                    <constraint firstItem="NSu-P0-iL0" firstAttribute="leading" secondItem="53G-fe-zrM" secondAttribute="leading" id="Zkh-FV-ndA"/>
+                                    <constraint firstItem="DkA-yz-hqk" firstAttribute="top" secondItem="Q2K-4u-7N4" secondAttribute="bottom" constant="8" symbolic="YES" id="fjQ-CN-nq6"/>
+                                    <constraint firstItem="Q2K-4u-7N4" firstAttribute="top" secondItem="uKv-84-G6e" secondAttribute="top" constant="72" id="hmW-rm-EE2"/>
+                                    <constraint firstItem="f9d-W2-a0s" firstAttribute="centerX" secondItem="ERX-TP-l0g" secondAttribute="centerX" id="hv8-mG-RCl"/>
+                                    <constraint firstItem="gm9-OD-WV4" firstAttribute="top" secondItem="NSu-P0-iL0" secondAttribute="bottom" constant="8" symbolic="YES" id="rny-Yf-JDZ"/>
+                                    <constraint firstItem="53G-fe-zrM" firstAttribute="leading" secondItem="MWx-Ge-evc" secondAttribute="leading" id="sas-ss-cxT"/>
+                                    <constraint firstItem="DkA-yz-hqk" firstAttribute="centerX" secondItem="Q2K-4u-7N4" secondAttribute="centerX" id="wpt-Ep-afM"/>
+                                    <constraint firstItem="f9d-W2-a0s" firstAttribute="top" secondItem="vlY-b3-uj5" secondAttribute="bottom" constant="8" symbolic="YES" id="x5U-qc-eR4"/>
+                                    <constraint firstItem="Bid-Wb-lN6" firstAttribute="trailing" secondItem="DkA-yz-hqk" secondAttribute="trailing" id="y1e-VL-uAs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkA-yz-hqk">
-                                <rect key="frame" x="20" y="101" width="206" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="206" id="Bxv-4u-dYn"/>
-                                    <constraint firstAttribute="height" constant="30" id="MxM-zv-S4u"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="მაფრთხილებელი"/>
-                                <connections>
-                                    <segue destination="pLV-3Q-gat" kind="show" identifier="მაფრთხილებელი" id="kIg-62-ck8"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DkA-yz-hqk" firstAttribute="top" secondItem="Q2K-4u-7N4" secondAttribute="bottom" constant="8" symbolic="YES" id="Cyh-sB-QAh"/>
-                            <constraint firstItem="l6m-Fk-fzi" firstAttribute="leading" secondItem="DkA-yz-hqk" secondAttribute="trailing" constant="-226" id="EE3-EM-pJo"/>
-                            <constraint firstItem="l6m-Fk-fzi" firstAttribute="leading" secondItem="UmB-xE-qkp" secondAttribute="leading" id="GN8-c1-huK"/>
-                            <constraint firstItem="Q2K-4u-7N4" firstAttribute="top" secondItem="Apz-m6-dlN" secondAttribute="bottom" constant="8" symbolic="YES" id="LLu-F2-0dD"/>
-                            <constraint firstItem="l6m-Fk-fzi" firstAttribute="bottom" secondItem="fKL-u2-3p1" secondAttribute="top" id="Qe7-LQ-dVC"/>
-                            <constraint firstItem="l6m-Fk-fzi" firstAttribute="top" secondItem="UmB-xE-qkp" secondAttribute="top" id="RPv-mI-hcI"/>
-                            <constraint firstAttribute="trailing" secondItem="l6m-Fk-fzi" secondAttribute="trailing" id="dhC-D5-vSW"/>
-                            <constraint firstItem="DkA-yz-hqk" firstAttribute="leading" secondItem="UmB-xE-qkp" secondAttribute="leadingMargin" id="tA1-f8-naO"/>
-                            <constraint firstItem="DkA-yz-hqk" firstAttribute="leading" secondItem="Q2K-4u-7N4" secondAttribute="leading" id="tWv-ds-eQT"/>
-                            <constraint firstItem="l6m-Fk-fzi" firstAttribute="leading" secondItem="Q2K-4u-7N4" secondAttribute="trailing" constant="-180" id="uzM-Mr-Glo"/>
-                            <constraint firstItem="DkA-yz-hqk" firstAttribute="top" secondItem="Q2K-4u-7N4" secondAttribute="bottom" constant="8" id="xx5-9z-HfI"/>
+                            <constraint firstAttribute="trailing" secondItem="uKv-84-G6e" secondAttribute="trailing" id="H3E-0Q-6PZ"/>
+                            <constraint firstItem="uKv-84-G6e" firstAttribute="bottom" secondItem="fKL-u2-3p1" secondAttribute="top" id="lrS-QH-Y2G"/>
+                            <constraint firstItem="uKv-84-G6e" firstAttribute="top" secondItem="Apz-m6-dlN" secondAttribute="bottom" id="lyd-hE-T4h"/>
+                            <constraint firstItem="uKv-84-G6e" firstAttribute="leading" secondItem="UmB-xE-qkp" secondAttribute="leading" id="pxr-ja-qaM"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Cyh-sB-QAh"/>
-                                <exclude reference="tA1-f8-naO"/>
-                                <exclude reference="tWv-ds-eQT"/>
-                            </mask>
-                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVt-YL-F9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3351" y="934"/>
+            <point key="canvasLocation" x="3092" y="727"/>
         </scene>
         <!--Theory Pdf View Controller-->
         <scene sceneID="nFP-Sg-iEH">
@@ -611,7 +793,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZ0-xV-yQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4053" y="768"/>
+            <point key="canvasLocation" x="3887" y="802"/>
         </scene>
         <!--Stat Table View Controller-->
         <scene sceneID="Drw-XQ-bFD">
@@ -658,7 +840,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w28-Te-oL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1803" y="847"/>
+            <point key="canvasLocation" x="1615" y="503"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MK9-LN-uiy">
@@ -676,7 +858,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fG1-z1-chu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1803" y="171"/>
+            <point key="canvasLocation" x="1651" y="-341"/>
         </scene>
     </scenes>
     <resources>
@@ -684,10 +866,11 @@
         <image name="background 2" width="1280" height="800"/>
         <image name="button" width="240" height="120"/>
         <image name="road" width="1600" height="1200"/>
-        <image name="road2" width="692" height="519"/>
+        <image name="road2" width="640" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ENf-hj-z0b"/>
         <segue reference="UR8-8c-rzI"/>
-        <segue reference="K8v-tj-Xar"/>
+        <segue reference="wDP-qu-xYv"/>
     </inferredMetricsTieBreakers>
 </document>
