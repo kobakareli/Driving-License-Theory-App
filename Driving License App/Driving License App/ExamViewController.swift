@@ -14,6 +14,13 @@ class ExamViewController: UIViewController {
     var myTimer = NSTimer()
     var minutes = 30
     var timeCount = 0
+    var image = UIImage(named: "road")
+    
+    var question : Question?  = nil {
+        didSet {
+            image = UIImage(named: question!.getImageName())
+        }
+    }
     
     @IBOutlet weak var timer: UILabel!
 
@@ -60,41 +67,73 @@ class ExamViewController: UIViewController {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        var count = 1
+        if let _ = image {
+            count += 1
+        }
+        count += (question?.getAnswers().count)!
+        return count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var c = UITableViewCell()
-        if indexPath.row == 0 {
-            if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
-                c = cell
+        if let _ = image {
+            if indexPath.row == 0 {
+                if let cell = tableView.dequeueReusableCellWithIdentifier("image", forIndexPath: indexPath) as UITableViewCell? {
+                    cell.imageView?.image = image
+                    c = cell
+                }
+            }
+            if indexPath.row == 1 {
+                if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
+                    cell.textLabel?.text = question?.getQuestion()
+                    c = cell
+                }
+                
+            }
+            if indexPath.row > 1 {
+                if let cell = tableView.dequeueReusableCellWithIdentifier("answer", forIndexPath: indexPath) as UITableViewCell? {
+                    cell.textLabel?.text = question?.getAnswers()[indexPath.row-2]
+                    c = cell
+                }
             }
         }
-        if indexPath.row == 1 {
-            if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
-                cell.textLabel?.text = "Question"
-                c = cell
+        else {
+            if indexPath.row == 0 {
+                if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
+                    cell.textLabel?.text = question?.getQuestion()
+                    c = cell
+                }
+                
             }
-
-        }
-        if indexPath.row > 1 {
-            if let cell = tableView.dequeueReusableCellWithIdentifier("answer", forIndexPath: indexPath) as UITableViewCell? {
-                cell.textLabel?.text = "Answer"
-                c = cell
+            if indexPath.row > 0 {
+                if let cell = tableView.dequeueReusableCellWithIdentifier("answer", forIndexPath: indexPath) as UITableViewCell? {
+                    cell.textLabel?.text = question?.getAnswers()[indexPath.row-1]
+                    c = cell
+                }
             }
         }
         return c
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            if let _ = image {
+                return image!.size.height*(UIScreen.mainScreen().bounds.width-22)/image!.size.width
+            }
+        }
+        return UITableViewAutomaticDimension
     }
-    */
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if identifier == "image" {
+                if let destination = segue.destinationViewController as? ImageViewController {
+                    if let cell = sender as? UITableViewCell {
+                        destination.image = cell.imageView?.image
+                    }
+                }
+            }
+        }
+    }
 }

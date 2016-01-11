@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qNc-W2-l7j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qNc-W2-l7j">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -22,12 +22,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gv-jS-ETc">
-                                <rect key="frame" x="180" y="270" width="240" height="60"/>
+                                <rect key="frame" x="146" y="270" width="309" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="JdL-8d-DpZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="List Of Problems" backgroundImage="button">
+                                <state key="normal" title="ბილეთების სია" backgroundImage="button">
                                     <color key="titleColor" red="0.98431378602981567" green="0.98431378602981567" blue="0.95294123888015747" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <variation key="default">
@@ -40,12 +40,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ei-M0-d2m">
-                                <rect key="frame" x="180" y="360" width="240" height="60"/>
+                                <rect key="frame" x="146" y="360" width="309" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="nsc-Sk-Vqp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Settings" backgroundImage="button">
+                                <state key="normal" title="პარამეტრები" backgroundImage="button">
                                     <color key="titleColor" red="0.98431378602981567" green="0.98431378602981567" blue="0.94509810209274292" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <variation key="default">
@@ -58,37 +58,28 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0t-ue-ACL">
-                                <rect key="frame" x="180" y="180" width="240" height="60"/>
+                                <rect key="frame" x="146" y="180" width="309" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="IX7-3i-aHe"/>
+                                    <constraint firstAttribute="width" constant="309" id="QHm-nt-kGU"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="xED-y7-QeR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Start Simulation" backgroundImage="button">
+                                <state key="normal" title="სიმულაციის დაწყება" backgroundImage="button">
                                     <color key="titleColor" red="0.99215692281723022" green="0.98823535442352295" blue="0.97647064924240112" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="UbO-eM-Xdc" kind="show" identifier="exam" id="zlo-B0-mwV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xj8-Wt-2kU">
-                                <rect key="frame" x="180" y="450" width="240" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Stats" backgroundImage="button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="6oB-JH-J3z" kind="show" id="MjL-Pa-UjJ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esc-Wf-1Lo">
-                                <rect key="frame" x="180" y="90" width="240" height="60"/>
+                                <rect key="frame" x="146" y="90" width="309" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="F3w-AH-OWS"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="SYe-Qk-FZX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Theory" backgroundImage="button">
+                                <state key="normal" title="თეორია" backgroundImage="button">
                                     <color key="titleColor" red="0.99215692280000001" green="0.98823535439999999" blue="0.97647064920000004" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <variation key="default">
@@ -101,6 +92,16 @@
                                     <segue destination="Wgx-LZ-KtK" kind="show" id="j8f-NA-PX9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xj8-Wt-2kU">
+                                <rect key="frame" x="146" y="450" width="309" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="სტატისტიკა" backgroundImage="button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="6oB-JH-J3z" kind="show" id="MjL-Pa-UjJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92156869173049927" green="0.92156869173049927" blue="0.070588238537311554" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
@@ -109,6 +110,7 @@
                             <constraint firstItem="F9g-6x-p8A" firstAttribute="top" secondItem="esc-Wf-1Lo" secondAttribute="bottom" constant="-154" id="7zM-Vo-are"/>
                             <constraint firstItem="esc-Wf-1Lo" firstAttribute="width" secondItem="l0t-ue-ACL" secondAttribute="height" multiplier="4:1" id="8TD-cz-zJ1"/>
                             <constraint firstItem="esc-Wf-1Lo" firstAttribute="width" secondItem="l0t-ue-ACL" secondAttribute="width" id="9v5-yx-BGa"/>
+                            <constraint firstItem="Xj8-Wt-2kU" firstAttribute="width" secondItem="esc-Wf-1Lo" secondAttribute="width" id="FOx-LX-HZi"/>
                             <constraint firstItem="F9g-6x-p8A" firstAttribute="top" secondItem="esc-Wf-1Lo" secondAttribute="bottom" constant="-154" id="Hud-60-n3D"/>
                             <constraint firstItem="esc-Wf-1Lo" firstAttribute="centerX" secondItem="l0t-ue-ACL" secondAttribute="centerX" id="Ikc-6L-Fxy"/>
                             <constraint firstItem="F9g-6x-p8A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Lgk-Mg-jqB"/>
@@ -130,8 +132,11 @@
                             <constraint firstItem="F9g-6x-p8A" firstAttribute="top" secondItem="esc-Wf-1Lo" secondAttribute="bottom" constant="-154" id="hwT-U2-JnA"/>
                             <constraint firstItem="Xj8-Wt-2kU" firstAttribute="top" secondItem="2ei-M0-d2m" secondAttribute="bottom" constant="30" id="l3J-db-K5o"/>
                             <constraint firstItem="Xj8-Wt-2kU" firstAttribute="width" secondItem="2ei-M0-d2m" secondAttribute="width" id="m7c-l7-nau"/>
+                            <constraint firstItem="4gv-jS-ETc" firstAttribute="width" secondItem="esc-Wf-1Lo" secondAttribute="width" id="mmi-lu-wKQ"/>
                             <constraint firstItem="F9g-6x-p8A" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="o2k-Rv-C0b"/>
+                            <constraint firstItem="2ei-M0-d2m" firstAttribute="width" secondItem="esc-Wf-1Lo" secondAttribute="width" id="pFg-rC-ZP9"/>
                             <constraint firstItem="4gv-jS-ETc" firstAttribute="height" secondItem="l0t-ue-ACL" secondAttribute="height" id="pnS-fU-VPd"/>
+                            <constraint firstItem="l0t-ue-ACL" firstAttribute="width" secondItem="esc-Wf-1Lo" secondAttribute="width" id="qah-3n-LRD"/>
                             <constraint firstItem="4gv-jS-ETc" firstAttribute="top" secondItem="l0t-ue-ACL" secondAttribute="bottom" constant="30" id="tON-6b-JEb"/>
                             <constraint firstItem="l0t-ue-ACL" firstAttribute="height" secondItem="esc-Wf-1Lo" secondAttribute="height" id="tmu-QI-aEm"/>
                             <constraint firstItem="esc-Wf-1Lo" firstAttribute="height" secondItem="l0t-ue-ACL" secondAttribute="height" id="zfB-dC-eRx"/>
@@ -220,9 +225,12 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QFy-Pi-yAv" secondAttribute="height" multiplier="32:9" id="d6l-IG-mXI"/>
                                 </constraints>
-                                <state key="normal" title="Note" backgroundImage="button">
+                                <state key="normal" title="განმარტება" backgroundImage="button">
                                     <color key="titleColor" red="0.070588238540000001" green="0.031372550870000002" blue="0.019607843829999999" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="U7g-qe-q3M" kind="show" id="dir-RY-543"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SYz-VM-O0K">
                                 <rect key="frame" x="0.0" y="124" width="600" height="425"/>
@@ -236,21 +244,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="117"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.5" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="zn2-tz-fQ7">
-                                                    <rect key="frame" x="8" y="8" width="584" height="101"/>
-                                                </scrollView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QC5-Ay-gw8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="117"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zn2-tz-fQ7" firstAttribute="trailing" secondItem="JlX-3Y-82K" secondAttribute="trailingMargin" id="3Dn-bh-hNj"/>
-                                                <constraint firstItem="zn2-tz-fQ7" firstAttribute="leading" secondItem="JlX-3Y-82K" secondAttribute="leadingMargin" id="HLY-nO-4xY"/>
-                                                <constraint firstItem="zn2-tz-fQ7" firstAttribute="top" secondItem="JlX-3Y-82K" secondAttribute="topMargin" id="dk5-tS-REb"/>
-                                                <constraint firstItem="zn2-tz-fQ7" firstAttribute="bottom" secondItem="JlX-3Y-82K" secondAttribute="bottomMargin" id="mIB-as-h5p"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QC5-Ay-gw8" secondAttribute="bottom" constant="-8" id="l8b-UP-O6J"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="QC5-Ay-gw8" secondAttribute="trailing" constant="-8" id="nJm-lp-xnH"/>
+                                                <constraint firstItem="QC5-Ay-gw8" firstAttribute="top" secondItem="JlX-3Y-82K" secondAttribute="topMargin" constant="-8" id="seh-Za-OJD"/>
+                                                <constraint firstItem="QC5-Ay-gw8" firstAttribute="leading" secondItem="JlX-3Y-82K" secondAttribute="leadingMargin" constant="-8" id="xUd-rF-XnE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration" identifier="image">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <segue destination="tEY-qF-HRV" kind="show" identifier="image" id="Ttr-dy-F3K"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="question" rowHeight="99" id="F80-Tp-6IA">
                                         <rect key="frame" x="0.0" y="146" width="600" height="99"/>
@@ -373,7 +384,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3s-Hl-mwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3372" y="-525"/>
+            <point key="canvasLocation" x="3280" y="-537"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="IxV-FE-ZWD">
+            <objects>
+                <viewController id="tEY-qF-HRV" customClass="ImageViewController" customModule="Driving_License_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ie8-Kp-w73"/>
+                        <viewControllerLayoutGuide type="bottom" id="fOh-w0-wBZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zq4-S8-4gw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rV3-ME-Xln">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="rV3-ME-Xln" secondAttribute="trailing" constant="-20" id="BRC-UJ-jSF"/>
+                            <constraint firstItem="rV3-ME-Xln" firstAttribute="leading" secondItem="zq4-S8-4gw" secondAttribute="leadingMargin" constant="-20" id="Jga-wi-b9S"/>
+                            <constraint firstItem="fOh-w0-wBZ" firstAttribute="top" secondItem="rV3-ME-Xln" secondAttribute="bottom" id="O3e-CW-xwo"/>
+                            <constraint firstItem="rV3-ME-Xln" firstAttribute="top" secondItem="zq4-S8-4gw" secondAttribute="topMargin" id="ROf-9L-EKK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="rV3-ME-Xln" id="fl2-TP-3Bf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pFo-GZ-X5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3992" y="-537"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HHJ-OF-wu8">
+            <objects>
+                <viewController id="U7g-qe-q3M" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4vU-TG-eqD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ov8-2A-YW6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f6D-sv-jjP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="კითხვის განმარტება" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZW-Ax-htk">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lZW-Ax-htk" firstAttribute="top" secondItem="4vU-TG-eqD" secondAttribute="bottom" constant="8" id="41f-R9-bYW"/>
+                            <constraint firstItem="lZW-Ax-htk" firstAttribute="trailing" secondItem="f6D-sv-jjP" secondAttribute="trailingMargin" id="D6E-qO-bnZ"/>
+                            <constraint firstItem="lZW-Ax-htk" firstAttribute="leading" secondItem="f6D-sv-jjP" secondAttribute="leadingMargin" id="XnU-rJ-GY7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Q7-z2-DUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4748" y="365"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oRd-Jg-asx">
@@ -466,7 +540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pB-wq-sbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3842" y="61"/>
+            <point key="canvasLocation" x="3992" y="365"/>
         </scene>
         <!--Category Table View Controller-->
         <scene sceneID="gw6-ft-1he">
@@ -514,7 +588,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLA-Ci-yP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2243" y="1115"/>
+            <point key="canvasLocation" x="2523" y="365"/>
         </scene>
         <!--Theory View Controller-->
         <scene sceneID="yif-Wl-7up">
@@ -534,8 +608,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uKv-84-G6e">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSu-P0-iL0">
-                                        <rect key="frame" x="197" y="251" width="206" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSu-P0-iL0">
+                                        <rect key="frame" x="197" y="273" width="206" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="1tN-x5-bSv"/>
                                             <constraint firstAttribute="height" constant="34" id="oVw-sJ-HE4"/>
@@ -551,8 +625,8 @@
                                             <segue destination="pLV-3Q-gat" kind="show" identifier="საგზაო მონიშვნები" id="vsm-Yd-H5S"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="წესები:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9d-W2-a0s">
-                                        <rect key="frame" x="220" y="419" width="160" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="წესები:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9d-W2-a0s">
+                                        <rect key="frame" x="220" y="441" width="160" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="U3t-PK-zHX"/>
                                             <constraint firstAttribute="width" constant="160" id="pzg-Vu-CtE"/>
@@ -566,16 +640,8 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERX-TP-l0g">
-                                        <rect key="frame" x="146" y="444" width="308" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="კანონი საგზაო მოძრაობის შესახებ"/>
-                                        <connections>
-                                            <segue destination="pLV-3Q-gat" kind="show" identifier="კანონი საგზაო მოძრაობის შესახებ" id="mo4-Ao-e1t"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWx-Ge-evc">
-                                        <rect key="frame" x="197" y="117" width="206" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWx-Ge-evc">
+                                        <rect key="frame" x="197" y="139" width="206" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="Qxg-IN-MTj"/>
                                             <constraint firstAttribute="height" constant="34" id="qyv-o9-Mra"/>
@@ -591,8 +657,8 @@
                                             <segue destination="pLV-3Q-gat" kind="show" identifier="ამკრძალავი" id="wDP-qu-xYv"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53G-fe-zrM">
-                                        <rect key="frame" x="197" y="159" width="206" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53G-fe-zrM">
+                                        <rect key="frame" x="197" y="181" width="206" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="NhC-NB-LQd"/>
                                             <constraint firstAttribute="height" constant="34" id="j58-Xr-AoE"/>
@@ -608,8 +674,8 @@
                                             <segue destination="pLV-3Q-gat" kind="show" identifier="მიმთითებელი" id="w0j-7G-Ebc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biy-RV-FrK">
-                                        <rect key="frame" x="171" y="201" width="259" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biy-RV-FrK">
+                                        <rect key="frame" x="171" y="223" width="259" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="L8G-j9-eDf"/>
                                             <constraint firstAttribute="height" constant="34" id="TP7-r3-sAa"/>
@@ -625,32 +691,32 @@
                                             <segue destination="pLV-3Q-gat" kind="show" identifier="საინფორმაციო-მაჩვენებელი" id="2QC-If-bx5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm9-OD-WV4">
-                                        <rect key="frame" x="197" y="293" width="206" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm9-OD-WV4">
+                                        <rect key="frame" x="197" y="315" width="206" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="სერვისის"/>
                                         <connections>
                                             <segue destination="pLV-3Q-gat" kind="show" identifier="სერვისის" id="PzA-Zw-wdg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSY-pd-9Ib">
-                                        <rect key="frame" x="179" y="335" width="242" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSY-pd-9Ib">
+                                        <rect key="frame" x="179" y="357" width="242" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="დამატებითი ინფორმაციის"/>
                                         <connections>
                                             <segue destination="pLV-3Q-gat" kind="show" identifier="დამატებითი ინფორმაციის" id="4OP-X6-JYt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlY-b3-uj5">
-                                        <rect key="frame" x="197" y="377" width="206" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlY-b3-uj5">
+                                        <rect key="frame" x="197" y="399" width="206" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="შუქნიშნის სიგნალები"/>
                                         <connections>
                                             <segue destination="pLV-3Q-gat" kind="show" identifier="შუქნიშნის სიგნალები" id="VU6-2k-MWe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bid-Wb-lN6">
-                                        <rect key="frame" x="197" y="75" width="206" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bid-Wb-lN6">
+                                        <rect key="frame" x="197" y="97" width="206" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="6o2-G1-iqk"/>
                                             <constraint firstAttribute="height" constant="34" id="egP-iA-2bs"/>
@@ -666,26 +732,8 @@
                                             <segue destination="pLV-3Q-gat" kind="show" identifier="პრიორიტეტის" id="TNY-YD-CZS"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="საგზაო ნიშნები:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2K-4u-7N4">
-                                        <rect key="frame" x="220" y="8" width="160" height="17"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="160" id="kuO-4l-lvl"/>
-                                            <constraint firstAttribute="width" constant="160" id="m0c-Of-FJ7"/>
-                                            <constraint firstAttribute="height" constant="34" id="mNj-dU-T3b"/>
-                                            <constraint firstAttribute="height" constant="17" id="zID-ff-dGi"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="kuO-4l-lvl"/>
-                                                <exclude reference="mNj-dU-T3b"/>
-                                            </mask>
-                                        </variation>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkA-yz-hqk">
-                                        <rect key="frame" x="197" y="33" width="206" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkA-yz-hqk">
+                                        <rect key="frame" x="197" y="55" width="206" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="0Rg-fl-sFW"/>
                                             <constraint firstAttribute="height" constant="30" id="62W-nS-bEV"/>
@@ -707,11 +755,37 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvN-PU-ZPv">
-                                        <rect key="frame" x="146" y="486" width="308" height="33"/>
+                                        <rect key="frame" x="-82" y="-20" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="საგზაო ნიშნები:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2K-4u-7N4">
+                                        <rect key="frame" x="220" y="30" width="160" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="kuO-4l-lvl"/>
+                                            <constraint firstAttribute="width" constant="160" id="m0c-Of-FJ7"/>
+                                            <constraint firstAttribute="height" constant="34" id="mNj-dU-T3b"/>
+                                            <constraint firstAttribute="height" constant="17" id="zID-ff-dGi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="kuO-4l-lvl"/>
+                                                <exclude reference="mNj-dU-T3b"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERX-TP-l0g">
+                                        <rect key="frame" x="146" y="466" width="308" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="კანონი საგზაო მოძრაობის შესახებ"/>
+                                        <connections>
+                                            <segue destination="pLV-3Q-gat" kind="show" identifier="კანონი საგზაო მოძრაობის შესახებ" id="mo4-Ao-e1t"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="53G-fe-zrM" firstAttribute="trailing" secondItem="MWx-Ge-evc" secondAttribute="trailing" id="0me-ei-zti"/>
@@ -739,7 +813,7 @@
                                     <constraint firstItem="MWx-Ge-evc" firstAttribute="leading" secondItem="Bid-Wb-lN6" secondAttribute="leading" id="YfR-SG-oRV"/>
                                     <constraint firstItem="NSu-P0-iL0" firstAttribute="leading" secondItem="53G-fe-zrM" secondAttribute="leading" id="Zkh-FV-ndA"/>
                                     <constraint firstItem="DkA-yz-hqk" firstAttribute="top" secondItem="Q2K-4u-7N4" secondAttribute="bottom" constant="8" symbolic="YES" id="fjQ-CN-nq6"/>
-                                    <constraint firstItem="Q2K-4u-7N4" firstAttribute="top" secondItem="uKv-84-G6e" secondAttribute="top" constant="72" id="hmW-rm-EE2"/>
+                                    <constraint firstItem="Q2K-4u-7N4" firstAttribute="top" secondItem="uKv-84-G6e" secondAttribute="top" constant="30" id="hmW-rm-EE2"/>
                                     <constraint firstItem="f9d-W2-a0s" firstAttribute="centerX" secondItem="ERX-TP-l0g" secondAttribute="centerX" id="hv8-mG-RCl"/>
                                     <constraint firstItem="gm9-OD-WV4" firstAttribute="top" secondItem="NSu-P0-iL0" secondAttribute="bottom" constant="8" symbolic="YES" id="rny-Yf-JDZ"/>
                                     <constraint firstItem="53G-fe-zrM" firstAttribute="leading" secondItem="MWx-Ge-evc" secondAttribute="leading" id="sas-ss-cxT"/>
@@ -760,7 +834,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVt-YL-F9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3092" y="727"/>
+            <point key="canvasLocation" x="3280" y="365"/>
         </scene>
         <!--Theory Pdf View Controller-->
         <scene sceneID="nFP-Sg-iEH">
@@ -793,7 +867,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZ0-xV-yQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3887" y="802"/>
+            <point key="canvasLocation" x="3297" y="1180"/>
         </scene>
         <!--Stat Table View Controller-->
         <scene sceneID="Drw-XQ-bFD">
@@ -840,7 +914,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w28-Te-oL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1615" y="503"/>
+            <point key="canvasLocation" x="1609" y="365"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MK9-LN-uiy">
@@ -858,7 +932,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fG1-z1-chu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1651" y="-341"/>
+            <point key="canvasLocation" x="1615" y="-499"/>
         </scene>
     </scenes>
     <resources>
@@ -869,8 +943,8 @@
         <image name="road2" width="640" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ENf-hj-z0b"/>
-        <segue reference="UR8-8c-rzI"/>
+        <segue reference="zlo-B0-mwV"/>
         <segue reference="wDP-qu-xYv"/>
+        <segue reference="K8v-tj-Xar"/>
     </inferredMetricsTieBreakers>
 </document>
