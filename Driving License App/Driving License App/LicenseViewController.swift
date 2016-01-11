@@ -33,8 +33,8 @@ class LicenseViewController: UIViewController {
             if let identifier = segue.identifier {
                 if identifier == "exam" {
                     destination.examMode = true
-                    let answers = ["Yes", "No", "Who knows?!", "Who cares?!"]
-                    destination.question = Question(imagename: "road", questionText: "Is this working?", answersArray: answers, correctAnswerIndex: 1, category: "Testing")
+                    let simulator = Simulator(category: nil)
+                    destination.simulator = simulator
                 }
             }
         }

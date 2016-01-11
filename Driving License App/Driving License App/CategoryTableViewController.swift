@@ -42,24 +42,15 @@ class CategoryTableViewController: UITableViewController {
                 if let destination = segue.destinationViewController as? ExamViewController {
                     if let cell = sender as? UITableViewCell {
                         if let label = cell.textLabel {
-                            //let text = label.text
+                            let category = label.text
+                            let simulator = Simulator(category: category)
                             destination.examMode = false
+                            destination.simulator = simulator
                         }
                     }
                 }
             }
         }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

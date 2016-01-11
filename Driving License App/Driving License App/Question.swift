@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Question {
+class Question: Equatable, Hashable{
     
     private var imageName = ""
     private var question = "";
@@ -43,4 +43,14 @@ class Question {
     func getCategory() -> String {
         return category
     }
+    
+    var hashValue: Int {
+        get {
+            return self.question.hashValue
+        }
+    }
+}
+
+func ==(lhs: Question, rhs: Question) -> Bool {
+    return lhs.hashValue == rhs.hashValue
 }

@@ -15,6 +15,7 @@ class ExamViewController: UIViewController {
     var minutes = 30
     var timeCount = 0
     var image = UIImage(named: "road")
+    var simulator : Simulator? = nil
     
     var question : Question?  = nil {
         didSet {
@@ -56,7 +57,9 @@ class ExamViewController: UIViewController {
             timer.text = "\(minutes):00"
             myTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("elapse"), userInfo: nil, repeats: true)
         }
-        // Do any additional setup after loading the view.
+        if let s = simulator {
+            question = s.getNextQuestion()
+        }
     }
     
     
