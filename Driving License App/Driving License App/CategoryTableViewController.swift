@@ -29,11 +29,17 @@ class CategoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath)
         let rowId : NSInteger = indexPath.row
         cell.textLabel?.text = QuestionConstants.categoryNames[rowId]
+        cell.textLabel?.numberOfLines = 3
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
         return cell
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "აირჩიეთ კატეგორია"
+    }
+    
+   override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

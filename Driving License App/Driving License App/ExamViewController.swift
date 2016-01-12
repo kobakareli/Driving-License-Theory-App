@@ -16,8 +16,6 @@ class ExamViewController: UIViewController {
     var simulator : Simulator? = nil
     var offset = 1
     
-    var genericColor = UIColor.grayColor()
-    
     var numberOfQuestions = 0 {
         didSet {
             questionNum.text = "\(questionsAnswered)/\(numberOfQuestions)"
@@ -133,13 +131,16 @@ class ExamViewController: UIViewController {
         if indexPath.row == offset-1 {
             if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
                 cell.textLabel?.text = question?.getQuestion()
+                cell.textLabel?.numberOfLines = 5
+                cell.textLabel?.adjustsFontSizeToFitWidth = true
                 c = cell
             }
         }
         if indexPath.row >= offset {
             if let cell = tableView.dequeueReusableCellWithIdentifier("answer", forIndexPath: indexPath) as UITableViewCell? {
                 cell.textLabel?.text = question?.getAnswers()[indexPath.row-2]
-                cell.textLabel?.backgroundColor = genericColor
+                cell.textLabel?.numberOfLines = 5
+                cell.textLabel?.adjustsFontSizeToFitWidth = true
                 c = cell
             }
         }
@@ -168,7 +169,7 @@ class ExamViewController: UIViewController {
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if identifier == "next" && questionsAnswered < 29 {
+        if identifier == "next" && questionsAnswered < numberOfQuestions-1 {
             // get answer from the sender here, then generate new question
             if let cell = sender as? UITableViewCell {
                 if let indexPath = tableView.indexPathForCell(cell) {
