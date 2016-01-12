@@ -13,15 +13,61 @@ class ExamViewController: UIViewController {
     var examMode = false
     var myTimer = NSTimer()
     var minutes = 30
-    var timeCount = 0
-    var image = UIImage(named: "road")
+    var numberOfQuestions = 30
     var simulator : Simulator? = nil
+    var offset = 1
+    
+    var genericColor = UIColor.grayColor()
+    
+    var image = UIImage(named: "road") {
+        didSet {
+            if let _ = image {
+                offset = 2
+            }
+            else {
+                offset = 1
+            }
+        }
+    }
+    
+    var timeCount = 0 {
+        didSet {
+            var text = ""
+            if timeCount/60 < 10 {
+                text = "0\(timeCount/60)"
+            }
+            else {
+                text = "\(timeCount/60)"
+            }
+            if timeCount%60 < 10 {
+                text = text + ":0\(timeCount%60)"
+            }
+            else {
+                text = text + ":\(timeCount%60)"
+            }
+            timer.text = text
+        }
+    }
+    
+    var questionsAnswered = 0 {
+        didSet {
+            questionNum.text = "\(questionsAnswered)/\(numberOfQuestions)"
+        }
+    }
+    
+    var wrongAnswersNum = 0 {
+        didSet {
+            wrongAnswers.text = "\(wrongAnswersNum)"
+        }
+    }
     
     var question : Question?  = nil {
         didSet {
             image = UIImage(named: question!.getImageName())
         }
     }
+    
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var timer: UILabel!
 
@@ -31,20 +77,6 @@ class ExamViewController: UIViewController {
     
     func elapse() {
         timeCount -= 1
-        var text = ""
-        if timeCount/60 < 10 {
-            text = "0\(timeCount/60)"
-        }
-        else {
-            text = "\(timeCount/60)"
-        }
-        if timeCount%60 < 10 {
-            text = text + ":0\(timeCount%60)"
-        }
-        else {
-            text = text + ":\(timeCount%60)"
-        }
-        timer.text = text
         if timeCount == 0 {
             myTimer.invalidate()
         }
@@ -54,7 +86,6 @@ class ExamViewController: UIViewController {
         super.viewDidLoad()
         if examMode {
             timeCount = minutes*60
-            timer.text = "\(minutes):00"
             myTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("elapse"), userInfo: nil, repeats: true)
         }
         if let s = simulator {
@@ -74,7 +105,9 @@ class ExamViewController: UIViewController {
         if let _ = image {
             count += 1
         }
-        count += (question?.getAnswers().count)!
+        if let q = question {
+            count += q.getAnswers().count
+        }
         return count
     }
     
@@ -87,33 +120,18 @@ class ExamViewController: UIViewController {
                     c = cell
                 }
             }
-            if indexPath.row == 1 {
-                if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
-                    cell.textLabel?.text = question?.getQuestion()
-                    c = cell
-                }
-                
-            }
-            if indexPath.row > 1 {
-                if let cell = tableView.dequeueReusableCellWithIdentifier("answer", forIndexPath: indexPath) as UITableViewCell? {
-                    cell.textLabel?.text = question?.getAnswers()[indexPath.row-2]
-                    c = cell
-                }
+        }
+        if indexPath.row == offset-1 {
+            if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
+                cell.textLabel?.text = question?.getQuestion()
+                c = cell
             }
         }
-        else {
-            if indexPath.row == 0 {
-                if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
-                    cell.textLabel?.text = question?.getQuestion()
-                    c = cell
-                }
-                
-            }
-            if indexPath.row > 0 {
-                if let cell = tableView.dequeueReusableCellWithIdentifier("answer", forIndexPath: indexPath) as UITableViewCell? {
-                    cell.textLabel?.text = question?.getAnswers()[indexPath.row-1]
-                    c = cell
-                }
+        if indexPath.row >= offset {
+            if let cell = tableView.dequeueReusableCellWithIdentifier("answer", forIndexPath: indexPath) as UITableViewCell? {
+                cell.textLabel?.text = question?.getAnswers()[indexPath.row-2]
+                cell.textLabel?.backgroundColor = genericColor
+                c = cell
             }
         }
         return c
@@ -138,5 +156,26 @@ class ExamViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "next" && questionsAnswered < 30 {
+            // get answer from the sender here, then generate new question
+            if let cell = sender as? UITableViewCell {
+                if let indexPath = tableView.indexPathForCell(cell) {
+                    if indexPath.row - offset == (question?.getCorrectAnswerIndex())! {
+                        cell.textLabel?.backgroundColor = UIColor.greenColor()
+                    }
+                    else {
+                        cell.textLabel?.backgroundColor = UIColor.redColor()
+                    }
+                }
+                question = simulator?.getNextQuestion()
+                questionsAnswered += 1
+                tableView.reloadData()
+                return false
+            }
+        }
+        return true
     }
 }
