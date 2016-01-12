@@ -13,11 +13,16 @@ class ExamViewController: UIViewController {
     var examMode = false
     var myTimer = NSTimer()
     var minutes = 30
-    var numberOfQuestions = 30
     var simulator : Simulator? = nil
     var offset = 1
     
     var genericColor = UIColor.grayColor()
+    
+    var numberOfQuestions = 0 {
+        didSet {
+            questionNum.text = "\(questionsAnswered)/\(numberOfQuestions)"
+        }
+    }
     
     var image = UIImage(named: "road") {
         didSet {
@@ -63,8 +68,10 @@ class ExamViewController: UIViewController {
     
     var question : Question?  = nil {
         didSet {
-        let imageName = question!.getImageName()
-            image = UIImage(named: imageName)
+            if let q = question {
+                let imageName = q.getImageName()
+                image = UIImage(named: imageName)
+            }
         }
     }
     
@@ -91,6 +98,7 @@ class ExamViewController: UIViewController {
         }
         if let s = simulator {
             question = s.getNextQuestion()
+            numberOfQuestions = s.getNumberOfQuestions()
         }
     }
     
@@ -160,7 +168,7 @@ class ExamViewController: UIViewController {
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if identifier == "next" && questionsAnswered < 30 {
+        if identifier == "next" && questionsAnswered < 29 {
             // get answer from the sender here, then generate new question
             if let cell = sender as? UITableViewCell {
                 if let indexPath = tableView.indexPathForCell(cell) {
@@ -169,6 +177,7 @@ class ExamViewController: UIViewController {
                     }
                     else {
                         cell.textLabel?.backgroundColor = UIColor.redColor()
+                        wrongAnswersNum += 1
                     }
                 }
                 question = simulator?.getNextQuestion()
