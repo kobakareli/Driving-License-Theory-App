@@ -19,7 +19,8 @@ class ExamViewController: UIViewController {
     
     var question : Question?  = nil {
         didSet {
-            image = UIImage(named: question!.getImageName())
+        let imageName = question!.getImageName()
+            image = UIImage(named: imageName)
         }
     }
     

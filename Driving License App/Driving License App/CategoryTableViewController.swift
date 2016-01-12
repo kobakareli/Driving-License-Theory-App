@@ -9,6 +9,13 @@
 import UIKit
 
 class CategoryTableViewController: UITableViewController {
+    
+    let categoryNames : [String] = [
+    "მძღოლის, მგზავრის და ქვეითის მოვალეობა, საცნობი ნიშნები, კონვენცია",
+    "უწესივრობა და პირობები, რომელთა დროს აკრძალულია სატრანსპორტო საშუალების ექსპლუატაცია",
+    "მაფრთხილებელი ნიშნები",
+    "პრიორიტეტის ნიშნები"
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,19 +28,19 @@ class CategoryTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return categoryNames.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath)
-        cell.textLabel?.text = "Category"
-
+        let rowId : NSInteger = indexPath.row
+        cell.textLabel?.text = categoryNames[rowId]
         return cell
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Select Category"
+        return "აირჩიეთ კატეგორია"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

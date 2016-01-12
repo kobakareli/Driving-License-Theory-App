@@ -15,13 +15,15 @@ class Question: Equatable, Hashable{
     private var answers = [String]()
     private var correctAnswerIndex = 0
     private var category = ""
+    private var explanation = ""
     
-    init(imagename : String, questionText: String, answersArray: [String], correctAnswerIndex : Int, category : String) {
+    init(imagename : String, questionText: String, answersArray: [String], correctAnswerIndex : Int, category : String, explanation : String) {
         self.imageName = imagename
         self.question = questionText
         self.answers = answersArray
         self.correctAnswerIndex = correctAnswerIndex
         self.category = category
+        self.explanation = explanation
     }
     
     func getImageName() -> String {
@@ -42,6 +44,10 @@ class Question: Equatable, Hashable{
     
     func getCategory() -> String {
         return category
+    }
+    
+    func getExplanation() -> String {
+        return explanation
     }
     
     var hashValue: Int {
