@@ -21,19 +21,19 @@ class CategoryTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return QuestionConstants.categoryNames.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath)
-        cell.textLabel?.text = "Category"
-
+        let rowId : NSInteger = indexPath.row
+        cell.textLabel?.text = QuestionConstants.categoryNames[rowId]
         return cell
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Select Category"
+        return "აირჩიეთ კატეგორია"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
