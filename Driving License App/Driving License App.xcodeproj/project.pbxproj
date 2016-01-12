@@ -22,6 +22,7 @@
 		01E1835E1C41158E001DD804 /* StatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E1835D1C41158E001DD804 /* StatTableViewController.swift */; };
 		832733B01C448A1900A48524 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832733AF1C448A1800A48524 /* CoreData.framework */; };
 		832733B31C448B2B00A48524 /* QuestionModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 832733B11C448B2B00A48524 /* QuestionModel.xcdatamodeld */; };
+		835BC9211C45105200F495F1 /* QuestionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835BC9201C45105200F495F1 /* QuestionConstants.swift */; };
 		838D35811C4199680040FE27 /* TheoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838D35801C4199680040FE27 /* TheoryViewController.swift */; };
 		838D35831C41B4870040FE27 /* Theory in Resources */ = {isa = PBXBuildFile; fileRef = 838D35821C41B4860040FE27 /* Theory */; };
 		838D35871C41BBAC0040FE27 /* TheoryPdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */; };
@@ -66,6 +67,7 @@
 		01E1835D1C41158E001DD804 /* StatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatTableViewController.swift; sourceTree = "<group>"; };
 		832733AF1C448A1800A48524 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		832733B21C448B2B00A48524 /* QuestionModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuestionModel.xcdatamodel; sourceTree = "<group>"; };
+		835BC9201C45105200F495F1 /* QuestionConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionConstants.swift; path = ../QuestionConstants.swift; sourceTree = "<group>"; };
 		838D35801C4199680040FE27 /* TheoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheoryViewController.swift; sourceTree = "<group>"; };
 		838D35821C41B4860040FE27 /* Theory */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Theory; sourceTree = "<group>"; };
 		838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheoryPdfViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		0110BB721C3E5EC800688BC3 /* Driving License App */ = {
 			isa = PBXGroup;
 			children = (
+				835BC9201C45105200F495F1 /* QuestionConstants.swift */,
 				832733B11C448B2B00A48524 /* QuestionModel.xcdatamodeld */,
 				838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */,
 				0110BB751C3E5EC800688BC3 /* LicenseViewController.swift */,
@@ -293,6 +296,7 @@
 				01E1835E1C41158E001DD804 /* StatTableViewController.swift in Sources */,
 				0110BB761C3E5EC800688BC3 /* LicenseViewController.swift in Sources */,
 				0110BB741C3E5EC800688BC3 /* AppDelegate.swift in Sources */,
+				835BC9211C45105200F495F1 /* QuestionConstants.swift in Sources */,
 				019F78DB1C43E3BA00440DEC /* Question.swift in Sources */,
 				838D35871C41BBAC0040FE27 /* TheoryPdfViewController.swift in Sources */,
 				832733B31C448B2B00A48524 /* QuestionModel.xcdatamodeld in Sources */,

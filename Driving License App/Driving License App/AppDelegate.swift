@@ -59,7 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let question = NSManagedObject(entity: entity!,
             insertIntoManagedObjectContext: managedContext)
         
-            
         question.setValue(ans1, forKey: "ans1")
         question.setValue(ans2, forKey: "ans2")
         question.setValue(ans3, forKey: "ans3")
@@ -88,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //// This is not permanent, just to make it ready for the user, then we will delete it
         ///////
         
-        saveQuestion("ki", ans2: "albat", ans3: "ravi shen?", ans4: "ar var aqauri", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
+       // saveQuestion("ki", ans2: "albat", ans3: "ravi shen?", ans4: "ar var aqauri", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
         
         ///////
         

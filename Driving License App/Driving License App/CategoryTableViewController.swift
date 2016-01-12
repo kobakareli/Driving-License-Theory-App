@@ -9,13 +9,6 @@
 import UIKit
 
 class CategoryTableViewController: UITableViewController {
-    
-    let categoryNames : [String] = [
-    "მძღოლის, მგზავრის და ქვეითის მოვალეობა, საცნობი ნიშნები, კონვენცია",
-    "უწესივრობა და პირობები, რომელთა დროს აკრძალულია სატრანსპორტო საშუალების ექსპლუატაცია",
-    "მაფრთხილებელი ნიშნები",
-    "პრიორიტეტის ნიშნები"
-    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +21,14 @@ class CategoryTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryNames.count
+        return QuestionConstants.categoryNames.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath)
         let rowId : NSInteger = indexPath.row
-        cell.textLabel?.text = categoryNames[rowId]
+        cell.textLabel?.text = QuestionConstants.categoryNames[rowId]
         return cell
     }
     
