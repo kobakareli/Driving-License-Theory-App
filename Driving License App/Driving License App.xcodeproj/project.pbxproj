@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010B4E9D1C46339C008BAB3D /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4E9C1C46339C008BAB3D /* EndViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		010B4E9F1C4635F8008BAB3D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4E9E1C4635F8008BAB3D /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		0110BB741C3E5EC800688BC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110BB731C3E5EC800688BC3 /* AppDelegate.swift */; };
 		0110BB761C3E5EC800688BC3 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110BB751C3E5EC800688BC3 /* LicenseViewController.swift */; };
 		0110BB791C3E5EC800688BC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0110BB771C3E5EC800688BC3 /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010B4E9C1C46339C008BAB3D /* EndViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
+		010B4E9E1C4635F8008BAB3D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0110BB701C3E5EC800688BC3 /* Driving License App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Driving License App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0110BB731C3E5EC800688BC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0110BB751C3E5EC800688BC3 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */,
 				0110BB751C3E5EC800688BC3 /* LicenseViewController.swift */,
 				0110BB771C3E5EC800688BC3 /* Main.storyboard */,
+				010B4E9C1C46339C008BAB3D /* EndViewController.swift */,
+				010B4E9E1C4635F8008BAB3D /* SettingsViewController.swift */,
 				019F78DC1C44055300440DEC /* Simulator.swift */,
 				019F78DA1C43E3BA00440DEC /* Question.swift */,
 				019F78D81C43DC6800440DEC /* ImageViewController.swift */,
@@ -302,6 +308,8 @@
 				832733B31C448B2B00A48524 /* QuestionModel.xcdatamodeld in Sources */,
 				01795FC81C3FCC20000D80FD /* ExamViewController.swift in Sources */,
 				019F78DD1C44055300440DEC /* Simulator.swift in Sources */,
+				010B4E9F1C4635F8008BAB3D /* SettingsViewController.swift in Sources */,
+				010B4E9D1C46339C008BAB3D /* EndViewController.swift in Sources */,
 				01E1835A1C40F553001DD804 /* CategoryTableViewController.swift in Sources */,
 				019F78D91C43DC6800440DEC /* ImageViewController.swift in Sources */,
 				838D35811C4199680040FE27 /* TheoryViewController.swift in Sources */,

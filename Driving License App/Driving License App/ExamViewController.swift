@@ -15,6 +15,8 @@ class ExamViewController: UIViewController {
     var minutes = 30
     var simulator : Simulator? = nil
     var offset = 1
+    private var answerCells = [UITableViewCell]()
+    private var answerSelected = false
     
     var numberOfQuestions = 0 {
         didSet {
@@ -142,6 +144,7 @@ class ExamViewController: UIViewController {
                 cell.textLabel?.numberOfLines = 5
                 cell.textLabel?.adjustsFontSizeToFitWidth = true
                 c = cell
+                answerCells.append(cell)
             }
         }
         return c
@@ -155,7 +158,7 @@ class ExamViewController: UIViewController {
         }
         return UITableViewAutomaticDimension
     }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             if identifier == "image" {
@@ -165,27 +168,55 @@ class ExamViewController: UIViewController {
                     }
                 }
             }
+            if identifier == "end" {
+                if let destination = segue.destinationViewController as? EndViewController {
+                    if wrongAnswersNum <= 3 {
+                        destination.passed = true
+                    }
+                    else {
+                        destination.passed = false
+                    }
+                }
+            }
         }
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if identifier == "next" && questionsAnswered < numberOfQuestions-1 {
-            // get answer from the sender here, then generate new question
-            if let cell = sender as? UITableViewCell {
-                if let indexPath = tableView.indexPathForCell(cell) {
-                    if indexPath.row - offset == (question?.getCorrectAnswerIndex())! {
-                        cell.textLabel?.backgroundColor = UIColor.greenColor()
-                    }
-                    else {
-                        cell.textLabel?.backgroundColor = UIColor.redColor()
-                        wrongAnswersNum += 1
-                    }
+        
+        if identifier == "end" && questionsAnswered < numberOfQuestions {
+            if answerSelected == true {
+                answerSelected = false
+                if wrongAnswersNum > 3 && examMode == true {
+                    return true
                 }
+                answerCells = [UITableViewCell]()
                 question = simulator?.getNextQuestion()
-                questionsAnswered += 1
                 tableView.reloadData()
-                return false
             }
+            return false
+        }
+        if identifier == "next" {
+            if answerSelected == false {
+                if let cell = sender as? UITableViewCell {
+                    if let indexPath = tableView.indexPathForCell(cell) {
+                        if indexPath.row - offset == (question?.getCorrectAnswerIndex())! {
+                            cell.textLabel?.backgroundColor = UIColor.greenColor()
+                        }
+                        else {
+                            cell.textLabel?.backgroundColor = UIColor.redColor()
+                            if SettingsViewController.showCorrectAnswer == true {
+                                if let q = question {
+                                    answerCells[q.getCorrectAnswerIndex()].textLabel?.backgroundColor = UIColor.greenColor()
+                                }
+                            }
+                            wrongAnswersNum += 1
+                        }
+                    }
+                    questionsAnswered += 1
+                    answerSelected = true
+                }
+            }
+            return false
         }
         return true
     }
