@@ -25,7 +25,7 @@ class ExamViewController: UIViewController {
         }
     }
     
-    var image = UIImage(named: "road") {
+    var image = UIImage(named: "") {
         didSet {
             if let _ = image {
                 offset = 2
@@ -112,12 +112,12 @@ class ExamViewController: UIViewController {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        var count = 1
+        var count = 0
         if let _ = image {
             count += 1
         }
         if let q = question {
-            count += q.getAnswers().count
+            count += (q.getAnswers().count+1)
         }
         return count
     }
@@ -174,11 +174,16 @@ class ExamViewController: UIViewController {
             if identifier == "end" {
                 if let destination = segue.destinationViewController as? EndViewController {
                     if wrongAnswersNum <= 3 && questionsAnswered == numberOfQuestions {
+                        StatTableViewController.stats[2] += 1
+                        StatTableViewController.stats[3] += 1
                         destination.passed = true
                     }
                     else {
+                        StatTableViewController.stats[3] += 1
                         destination.passed = false
                     }
+                    NSUserDefaults.standardUserDefaults().setObject(StatTableViewController.stats, forKey: "LicenseStats")
+                    NSUserDefaults.standardUserDefaults().setObject(StatTableViewController.categories, forKey: "LicenseCatStats")
                 }
             }
             if identifier == "note" {
@@ -216,6 +221,8 @@ class ExamViewController: UIViewController {
                     if let indexPath = tableView.indexPathForCell(cell) {
                         if indexPath.row - offset == (question?.getCorrectAnswerIndex())!-1 {
                             cell.textLabel?.backgroundColor = UIColor.greenColor()
+                            StatTableViewController.stats[0] += 1
+                            StatTableViewController.categories[(question?.getCategory())!]?[0] += 1
                         }
                         else {
                             cell.textLabel?.backgroundColor = UIColor.redColor()
@@ -227,6 +234,8 @@ class ExamViewController: UIViewController {
                             wrongAnswersNum += 1
                         }
                     }
+                    StatTableViewController.stats[1] += 1
+                    StatTableViewController.categories[(question?.getCategory())!]?[1] += 1
                     questionsAnswered += 1
                     answerSelected = true
                 }
