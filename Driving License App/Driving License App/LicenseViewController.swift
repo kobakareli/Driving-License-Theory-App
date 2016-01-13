@@ -12,7 +12,14 @@ class LicenseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let stored = NSUserDefaults.standardUserDefaults().arrayForKey("LicenseSettings") as? [Bool]
+        if stored == nil {
+            SettingsViewController.settings.append(true)
+            NSUserDefaults.standardUserDefaults().setObject(SettingsViewController.settings, forKey: "LicenseSettings")
+        }
+        else {
+            SettingsViewController.settings = stored!
+        }
     }
 
     override func didReceiveMemoryWarning() {

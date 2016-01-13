@@ -15,6 +15,7 @@ class ExamViewController: UIViewController {
     var minutes = 30
     var simulator : Simulator? = nil
     var offset = 1
+    var defaultColor = UIColor()
     private var answerCells = [UITableViewCell]()
     private var answerSelected = false
     
@@ -87,6 +88,7 @@ class ExamViewController: UIViewController {
         timeCount -= 1
         if timeCount == 0 {
             myTimer.invalidate()
+            performSegueWithIdentifier("end", sender: nil)
         }
     }
     
@@ -132,6 +134,7 @@ class ExamViewController: UIViewController {
         }
         if indexPath.row == offset-1 {
             if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
+                defaultColor = (cell.textLabel?.backgroundColor)!
                 cell.textLabel?.text = question?.getQuestion()
                 cell.textLabel?.numberOfLines = 5
                 cell.textLabel?.adjustsFontSizeToFitWidth = true
@@ -170,11 +173,18 @@ class ExamViewController: UIViewController {
             }
             if identifier == "end" {
                 if let destination = segue.destinationViewController as? EndViewController {
-                    if wrongAnswersNum <= 3 {
+                    if wrongAnswersNum <= 3 && questionsAnswered == numberOfQuestions {
                         destination.passed = true
                     }
                     else {
                         destination.passed = false
+                    }
+                }
+            }
+            if identifier == "note" {
+                if let destination = segue.destinationViewController as? NoteViewController {
+                    if let q = question {
+                        destination.questionExplenation = q.getExplanation()
                     }
                 }
             }
@@ -189,6 +199,11 @@ class ExamViewController: UIViewController {
                 if wrongAnswersNum > 3 && examMode == true {
                     return true
                 }
+                if SettingsViewController.settings[0] == true {
+                    if let q = question {
+                        answerCells[q.getCorrectAnswerIndex()-1].textLabel?.backgroundColor = defaultColor
+                    }
+                }
                 answerCells = [UITableViewCell]()
                 question = simulator?.getNextQuestion()
                 tableView.reloadData()
@@ -199,14 +214,14 @@ class ExamViewController: UIViewController {
             if answerSelected == false {
                 if let cell = sender as? UITableViewCell {
                     if let indexPath = tableView.indexPathForCell(cell) {
-                        if indexPath.row - offset == (question?.getCorrectAnswerIndex())! {
+                        if indexPath.row - offset == (question?.getCorrectAnswerIndex())!-1 {
                             cell.textLabel?.backgroundColor = UIColor.greenColor()
                         }
                         else {
                             cell.textLabel?.backgroundColor = UIColor.redColor()
-                            if SettingsViewController.showCorrectAnswer == true {
+                            if SettingsViewController.settings[0] == true {
                                 if let q = question {
-                                    answerCells[q.getCorrectAnswerIndex()].textLabel?.backgroundColor = UIColor.greenColor()
+                                    answerCells[q.getCorrectAnswerIndex()-1].textLabel?.backgroundColor = UIColor.greenColor()
                                 }
                             }
                             wrongAnswersNum += 1

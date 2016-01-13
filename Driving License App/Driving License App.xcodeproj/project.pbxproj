@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		010B4E9D1C46339C008BAB3D /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4E9C1C46339C008BAB3D /* EndViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		010B4E9F1C4635F8008BAB3D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4E9E1C4635F8008BAB3D /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		010B4EA11C4666A5008BAB3D /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4EA01C4666A5008BAB3D /* NoteViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		0110BB741C3E5EC800688BC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110BB731C3E5EC800688BC3 /* AppDelegate.swift */; };
 		0110BB761C3E5EC800688BC3 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110BB751C3E5EC800688BC3 /* LicenseViewController.swift */; };
 		0110BB791C3E5EC800688BC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0110BB771C3E5EC800688BC3 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		010B4E9C1C46339C008BAB3D /* EndViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
 		010B4E9E1C4635F8008BAB3D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		010B4EA01C4666A5008BAB3D /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		0110BB701C3E5EC800688BC3 /* Driving License App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Driving License App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0110BB731C3E5EC800688BC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0110BB751C3E5EC800688BC3 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				832733B11C448B2B00A48524 /* QuestionModel.xcdatamodeld */,
 				838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */,
 				0110BB751C3E5EC800688BC3 /* LicenseViewController.swift */,
+				010B4EA01C4666A5008BAB3D /* NoteViewController.swift */,
 				0110BB771C3E5EC800688BC3 /* Main.storyboard */,
 				010B4E9C1C46339C008BAB3D /* EndViewController.swift */,
 				010B4E9E1C4635F8008BAB3D /* SettingsViewController.swift */,
@@ -312,6 +315,7 @@
 				010B4E9D1C46339C008BAB3D /* EndViewController.swift in Sources */,
 				01E1835A1C40F553001DD804 /* CategoryTableViewController.swift in Sources */,
 				019F78D91C43DC6800440DEC /* ImageViewController.swift in Sources */,
+				010B4EA11C4666A5008BAB3D /* NoteViewController.swift in Sources */,
 				838D35811C4199680040FE27 /* TheoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
