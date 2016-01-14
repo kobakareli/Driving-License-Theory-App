@@ -232,8 +232,8 @@
                                     <segue destination="U7g-qe-q3M" kind="show" identifier="note" id="dir-RY-543"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SYz-VM-O0K">
-                                <rect key="frame" x="0.0" y="126" width="600" height="425"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SYz-VM-O0K">
+                                <rect key="frame" x="0.0" y="124" width="600" height="425"/>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -260,7 +260,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGl-lQ-n6o">
-                                                    <rect key="frame" x="8" y="8" width="584" height="82"/>
+                                                    <rect key="frame" x="8" y="8" width="584" height="0.0"/>
                                                     <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -276,6 +276,11 @@
                                                 <constraint firstItem="uGl-lQ-n6o" firstAttribute="bottom" secondItem="h5J-bP-GsL" secondAttribute="bottomMargin" id="rUP-jQ-7i4"/>
                                                 <constraint firstItem="uGl-lQ-n6o" firstAttribute="top" secondItem="h5J-bP-GsL" secondAttribute="topMargin" id="vo6-c6-rwV"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="rUP-jQ-7i4"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration" identifier="question">
@@ -290,11 +295,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlC-x4-uBm">
-                                                    <rect key="frame" x="8" y="8" width="584" height="81"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XlC-x4-uBm">
+                                                    <rect key="frame" x="8" y="8" width="584" height="0.0"/>
                                                     <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <accessibility key="accessibilityConfiguration">
-                                                        <accessibilityTraits key="traits" button="YES" staticText="YES"/>
+                                                        <accessibilityTraits key="traits" button="YES" adjustable="YES"/>
                                                     </accessibility>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -302,11 +307,16 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XlC-x4-uBm" firstAttribute="leading" secondItem="ANH-Up-lsc" secondAttribute="leading" constant="8" id="LQM-fc-2aE"/>
-                                                <constraint firstItem="XlC-x4-uBm" firstAttribute="top" secondItem="ANH-Up-lsc" secondAttribute="top" constant="8" id="Top-50-HZ9"/>
-                                                <constraint firstAttribute="bottom" secondItem="XlC-x4-uBm" secondAttribute="bottom" constant="8" id="b2k-aV-u4j"/>
-                                                <constraint firstAttribute="trailing" secondItem="XlC-x4-uBm" secondAttribute="trailing" constant="8" id="ee4-sz-ptb"/>
+                                                <constraint firstItem="XlC-x4-uBm" firstAttribute="top" secondItem="ANH-Up-lsc" secondAttribute="topMargin" id="FOR-qT-SA8"/>
+                                                <constraint firstItem="XlC-x4-uBm" firstAttribute="trailing" secondItem="ANH-Up-lsc" secondAttribute="trailingMargin" id="Ngh-U2-h3m"/>
+                                                <constraint firstItem="XlC-x4-uBm" firstAttribute="leading" secondItem="ANH-Up-lsc" secondAttribute="leadingMargin" id="cVD-x9-xzG"/>
+                                                <constraint firstItem="XlC-x4-uBm" firstAttribute="bottom" secondItem="ANH-Up-lsc" secondAttribute="bottomMargin" id="ssQ-9x-Zvd"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="ssQ-9x-Zvd"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration" identifier="answer">
@@ -578,7 +588,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xrt-3O-3Xd">
-                                            <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                            <rect key="frame" x="8" y="8" width="584" height="0.0"/>
                                             <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
@@ -590,6 +600,11 @@
                                         <constraint firstItem="Xrt-3O-3Xd" firstAttribute="leading" secondItem="lk6-14-QLW" secondAttribute="leadingMargin" id="p1k-26-OW0"/>
                                         <constraint firstItem="Xrt-3O-3Xd" firstAttribute="bottom" secondItem="lk6-14-QLW" secondAttribute="bottomMargin" id="zFS-ve-X1c"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="zFS-ve-X1c"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>

@@ -66,7 +66,7 @@
 		0110BB8F1C3E5EC800688BC3 /* Driving License AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Driving License AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0110BB931C3E5EC800688BC3 /* Driving_License_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driving_License_AppUITests.swift; sourceTree = "<group>"; };
 		0110BB951C3E5EC800688BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01795FC71C3FCC20000D80FD /* ExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
+		01795FC71C3FCC20000D80FD /* ExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ExamViewController.swift; sourceTree = "<group>"; };
 		019F78D81C43DC6800440DEC /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		019F78DA1C43E3BA00440DEC /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		019F78DC1C44055300440DEC /* Simulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulator.swift; sourceTree = "<group>"; };

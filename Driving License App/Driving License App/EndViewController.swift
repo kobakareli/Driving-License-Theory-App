@@ -21,7 +21,7 @@ class EndViewController: UIViewController {
             self.view.backgroundColor = UIColor.greenColor()
         }
         else {
-            label.text = "წადი, შვილო, ისწავლე და მერე მოდი"
+            label.text = "თქვენ ვერ ჩააბარეთ გამოცდა"
             self.view.backgroundColor = UIColor.redColor()
         }
 

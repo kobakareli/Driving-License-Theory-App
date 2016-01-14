@@ -20,8 +20,19 @@ class Question: Equatable, Hashable{
     init(imagename : String, questionText: String, answersArray: [String], correctAnswerIndex : Int, category : String, explanation : String) {
         self.imageName = imagename
         self.question = questionText
-        self.answers = answersArray
-        self.correctAnswerIndex = correctAnswerIndex
+        var ans = answersArray
+        var s = Set<Int>()
+        for var i = 0; i < ans.count; i++ {
+            var indx = Int(arc4random_uniform(4))
+            while(s.contains(indx)) {
+                indx = Int(arc4random_uniform(4))
+            }
+            s.insert(indx)
+            if indx == correctAnswerIndex-1 {
+                self.correctAnswerIndex = i+1
+            }
+            self.answers.append(ans[indx])
+        }
         self.category = category
         self.explanation = explanation
     }

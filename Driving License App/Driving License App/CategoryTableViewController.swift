@@ -12,6 +12,8 @@ class CategoryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     // MARK: - Table view data source
@@ -32,7 +34,6 @@ class CategoryTableViewController: UITableViewController {
         cell.textLabel?.text = QuestionConstants.categoryNames[rowId]
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        cell.textLabel?.adjustsFontSizeToFitWidth = true
         return cell
     }
     
@@ -41,12 +42,6 @@ class CategoryTableViewController: UITableViewController {
     }
     
     override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 80
-        }
-        if indexPath.row == 1 {
-            return 100
-        }
         return UITableViewAutomaticDimension
     }
     
