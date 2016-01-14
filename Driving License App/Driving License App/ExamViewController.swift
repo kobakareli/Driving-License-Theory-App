@@ -18,6 +18,9 @@ class ExamViewController: UIViewController {
     var defaultColor = UIColor()
     private var answerCells = [UITableViewCell]()
     private var answerSelected = false
+    private var selectedCell = UITableViewCell()
+    private var correctCell = UITableViewCell()
+    private var questionIndexPath: NSIndexPath?
     
     var numberOfQuestions = 0 {
         didSet {
@@ -25,7 +28,7 @@ class ExamViewController: UIViewController {
         }
     }
     
-    var image = UIImage(named: "") {
+    var image: UIImage? = nil {
         didSet {
             if let _ = image {
                 offset = 2
@@ -94,8 +97,6 @@ class ExamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
         if examMode {
             timeCount = minutes*60
             myTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("elapse"), userInfo: nil, repeats: true)
@@ -103,6 +104,14 @@ class ExamViewController: UIViewController {
         if let s = simulator {
             question = s.getNextQuestion()
             numberOfQuestions = s.getNumberOfQuestions()
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if answerSelected {
+            selectedCell.textLabel?.backgroundColor = UIColor.redColor()
+            correctCell.textLabel?.backgroundColor = UIColor.greenColor()
         }
     }
     
@@ -128,14 +137,18 @@ class ExamViewController: UIViewController {
         if let _ = image {
             if indexPath.row == 0 {
                 if let cell = tableView.dequeueReusableCellWithIdentifier("image", forIndexPath: indexPath) as UITableViewCell? {
+                    let imageView = UIImageView(frame: CGRectMake(0,0, cell.frame.width, cell.frame.height))
+                    imageView.image = image
+                    cell.backgroundView = UIView();
+                    cell.backgroundView?.addSubview(imageView)
                     cell.backgroundColor = cell.contentView.backgroundColor
-                    cell.imageView?.image = image
                     c = cell
                 }
             }
         }
         if indexPath.row == offset-1 {
             if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
+                questionIndexPath = indexPath
                 cell.backgroundColor = cell.contentView.backgroundColor
                 defaultColor = (cell.textLabel?.backgroundColor)!
                 cell.textLabel?.text = question?.getQuestion()
@@ -148,6 +161,11 @@ class ExamViewController: UIViewController {
             if let cell = tableView.dequeueReusableCellWithIdentifier("answer", forIndexPath: indexPath) as UITableViewCell? {
                 cell.backgroundColor = cell.contentView.backgroundColor
                 cell.textLabel?.text = question?.getAnswers()[indexPath.row-2]
+                cell.textLabel?.backgroundColor = defaultColor
+                if answerSelected && ((indexPath.row - offset+1) == question?.getCorrectAnswerIndex()) {
+                    correctCell = cell
+                    cell.textLabel?.backgroundColor = UIColor.greenColor()
+                }
                 cell.textLabel?.numberOfLines = 0
                 cell.textLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
                 c = cell
@@ -157,10 +175,22 @@ class ExamViewController: UIViewController {
         return c
     }
     
+    func tableView(tableView : UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        if answerSelected {
+            selectedCell.textLabel?.backgroundColor = UIColor.redColor()
+            correctCell.textLabel?.backgroundColor = UIColor.greenColor()
+        }
+        if offset == 2 && indexPath.row == 0 && questionIndexPath != nil {
+            tableView.selectRowAtIndexPath(questionIndexPath, animated: false, scrollPosition: .None)
+        }
+    }
+    
+    
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
             if let _ = image {
-                return image!.size.height*(UIScreen.mainScreen().bounds.width-22)/image!.size.width
+                return image!.size.height*(UIScreen.mainScreen().bounds.width)/image!.size.width
             }
         }
         return UITableViewAutomaticDimension
@@ -171,7 +201,9 @@ class ExamViewController: UIViewController {
             if identifier == "image" {
                 if let destination = segue.destinationViewController as? ImageViewController {
                     if let cell = sender as? UITableViewCell {
-                        destination.image = cell.imageView?.image
+                        if let imageView = cell.backgroundView?.subviews[0] as? UIImageView {
+                            destination.image = imageView.image
+                        }
                     }
                 }
             }
@@ -209,12 +241,16 @@ class ExamViewController: UIViewController {
         if identifier == "end" && questionsAnswered < numberOfQuestions {
             if answerSelected == true {
                 answerSelected = false
+                selectedCell = UITableViewCell()
+                correctCell = UITableViewCell()
                 if wrongAnswersNum > 3 && examMode == true {
                     return true
                 }
                 if SettingsViewController.settings[0] == true {
                     if let q = question {
-                        answerCells[q.getCorrectAnswerIndex()-1].textLabel?.backgroundColor = defaultColor
+                        if answerCells.count > q.getCorrectAnswerIndex()-1 {
+                            answerCells[q.getCorrectAnswerIndex()-1].textLabel?.backgroundColor = defaultColor
+                        }
                     }
                 }
                 answerCells = [UITableViewCell]()
@@ -228,15 +264,20 @@ class ExamViewController: UIViewController {
                 if let cell = sender as? UITableViewCell {
                     if let indexPath = tableView.indexPathForCell(cell) {
                         if indexPath.row - offset == (question?.getCorrectAnswerIndex())!-1 {
+                            correctCell = cell
                             cell.textLabel?.backgroundColor = UIColor.greenColor()
                             StatTableViewController.stats[0] += 1
                             StatTableViewController.categories[(question?.getCategory())!]?[0] += 1
                         }
                         else {
+                            selectedCell = cell
                             cell.textLabel?.backgroundColor = UIColor.redColor()
                             if SettingsViewController.settings[0] == true {
                                 if let q = question {
-                                    answerCells[q.getCorrectAnswerIndex()-1].textLabel?.backgroundColor = UIColor.greenColor()
+                                    if answerCells.count > q.getCorrectAnswerIndex()-1 {
+                                        correctCell = answerCells[q.getCorrectAnswerIndex()-1]
+                                        answerCells[q.getCorrectAnswerIndex()-1].textLabel?.backgroundColor = UIColor.greenColor()
+                                    }
                                 }
                             }
                             wrongAnswersNum += 1

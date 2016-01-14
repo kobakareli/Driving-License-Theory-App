@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qNc-W2-l7j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qNc-W2-l7j">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -232,23 +232,6 @@
                                     <segue destination="U7g-qe-q3M" kind="show" identifier="note" id="dir-RY-543"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ac-G6-JQL">
-                                <rect key="frame" x="454" y="559" width="146" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="1Ac-G6-JQL" secondAttribute="height" multiplier="168:41" id="Khq-hX-viy"/>
-                                </constraints>
-                                <state key="normal" title="შემდეგი" backgroundImage="button">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Khq-hX-viy"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="3ai-bU-Ghr" kind="showDetail" identifier="end" id="M0h-Eh-DDj"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SYz-VM-O0K">
                                 <rect key="frame" x="0.0" y="126" width="600" height="425"/>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -260,17 +243,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZCa-fw-9RX" id="JlX-3Y-82K">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="117"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QC5-Ay-gw8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="117"/>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="QC5-Ay-gw8" secondAttribute="bottom" constant="-8" id="l8b-UP-O6J"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="QC5-Ay-gw8" secondAttribute="trailing" constant="-8" id="nJm-lp-xnH"/>
-                                                <constraint firstItem="QC5-Ay-gw8" firstAttribute="top" secondItem="JlX-3Y-82K" secondAttribute="topMargin" constant="-8" id="seh-Za-OJD"/>
-                                                <constraint firstItem="QC5-Ay-gw8" firstAttribute="leading" secondItem="JlX-3Y-82K" secondAttribute="leadingMargin" constant="-8" id="xUd-rF-XnE"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration" identifier="image">
@@ -330,10 +302,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XlC-x4-uBm" firstAttribute="bottom" secondItem="ANH-Up-lsc" secondAttribute="bottomMargin" id="1TC-dS-EnN"/>
-                                                <constraint firstItem="XlC-x4-uBm" firstAttribute="trailing" secondItem="ANH-Up-lsc" secondAttribute="trailingMargin" id="dhm-F6-APh"/>
-                                                <constraint firstItem="XlC-x4-uBm" firstAttribute="top" secondItem="ANH-Up-lsc" secondAttribute="topMargin" id="m6d-bX-uTL"/>
-                                                <constraint firstItem="XlC-x4-uBm" firstAttribute="leading" secondItem="ANH-Up-lsc" secondAttribute="leadingMargin" id="yqW-BT-qSl"/>
+                                                <constraint firstItem="XlC-x4-uBm" firstAttribute="leading" secondItem="ANH-Up-lsc" secondAttribute="leading" constant="8" id="LQM-fc-2aE"/>
+                                                <constraint firstItem="XlC-x4-uBm" firstAttribute="top" secondItem="ANH-Up-lsc" secondAttribute="top" constant="8" id="Top-50-HZ9"/>
+                                                <constraint firstAttribute="bottom" secondItem="XlC-x4-uBm" secondAttribute="bottom" constant="8" id="b2k-aV-u4j"/>
+                                                <constraint firstAttribute="trailing" secondItem="XlC-x4-uBm" secondAttribute="trailing" constant="8" id="ee4-sz-ptb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -350,6 +322,23 @@
                                     <outlet property="delegate" destination="UbO-eM-Xdc" id="IvP-hQ-88W"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ac-G6-JQL">
+                                <rect key="frame" x="454" y="559" width="146" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1Ac-G6-JQL" secondAttribute="height" multiplier="168:41" id="Khq-hX-viy"/>
+                                </constraints>
+                                <state key="normal" title="შემდეგი" backgroundImage="button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Khq-hX-viy"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="3ai-bU-Ghr" kind="showDetail" identifier="end" id="M0h-Eh-DDj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

@@ -122,13 +122,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ///////
         
         //deleteAllData("Question")
-        /*
+        
         saveQuestion("ki", ans2: "albat", ans3: "ravi shen?", ans4: "ar var aqauri", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
-        saveQuestion("ara", ans2: "ara", ans3: "ara", ans4: "ara", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
-        saveQuestion("ki", ans2: "ki", ans3: "ki", ans4: "ar var aqauri", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
+        saveQuestion("ara ara ara ara ara ara ara ara ara ara ara ara ara araara ara ara araara ara ara ara ara", ans2: "ara", ans3: "ara", ans4: "ara", category: "მაფრთხილებელი ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
+        saveQuestion("ki ki ki ki ki ki iki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki", ans2: "ki", ans3: "ki", ans4: "ar var aqauri", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
         saveQuestion("loso", ans2: "boso", ans3: "soso", ans4: "ar var aqauri", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
 
-        */
+        
 
         ///////
         
