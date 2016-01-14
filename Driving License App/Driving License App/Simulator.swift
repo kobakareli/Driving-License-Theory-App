@@ -78,7 +78,10 @@ class Simulator {
         do {
             var question : Question? = nil
             if chosenQuestion != nil {
-                let imagename : String = chosenQuestion!.valueForKey("imageName") as! String
+                var imagename : String? = chosenQuestion!.valueForKey("imageName") as? String
+                if imagename == "" {
+                    imagename = nil
+                }
                 let explanation : String = chosenQuestion!.valueForKey("explanation") as! String
                 let questionText : String = chosenQuestion!.valueForKey("question") as! String
                 let correctAnswerIndex : Int = chosenQuestion!.valueForKey("correctID") as! Int

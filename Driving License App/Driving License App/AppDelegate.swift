@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let error as NSError {
             print("copyPreGeneratedData error : \(error) \(error.userInfo)")
         }
-    
+        
         
     }
     
@@ -114,24 +114,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        
-        //// I will use this place to fill core data with questions.
-        //// This is not permanent, just to make it ready for the user, then we will delete it
-        ///////
-        
-        //deleteAllData("Question")
-        
-        saveQuestion("ki", ans2: "albat", ans3: "ravi shen?", ans4: "ar var aqauri", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
-        saveQuestion("ara ara ara ara ara ara ara ara ara ara ara ara ara araara ara ara araara ara ara ara ara", ans2: "ara", ans3: "ara", ans4: "ara", category: "მაფრთხილებელი ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
-        saveQuestion("ki ki ki ki ki ki iki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki ki", ans2: "ki", ans3: "ki", ans4: "ar var aqauri", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
-        saveQuestion("loso", ans2: "boso", ans3: "soso", ans4: "ar var aqauri", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
-
-        
-
-        ///////
-        
         return true
     }
 

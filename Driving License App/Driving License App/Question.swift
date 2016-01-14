@@ -10,22 +10,22 @@ import Foundation
 
 class Question: Equatable, Hashable{
     
-    private var imageName = ""
+    private var imageName : String? = nil
     private var question = "";
     private var answers = [String]()
     private var correctAnswerIndex = 0
     private var category = ""
     private var explanation = ""
     
-    init(imagename : String, questionText: String, answersArray: [String], correctAnswerIndex : Int, category : String, explanation : String) {
+    init(imagename : String?, questionText: String, answersArray: [String], correctAnswerIndex : Int, category : String, explanation : String) {
         self.imageName = imagename
         self.question = questionText
         var ans = answersArray
         var s = Set<Int>()
         for var i = 0; i < ans.count; i++ {
-            var indx = Int(arc4random_uniform(4))
+            var indx = Int(arc4random_uniform(UInt32(ans.count)))
             while(s.contains(indx)) {
-                indx = Int(arc4random_uniform(4))
+                indx = Int(arc4random_uniform(UInt32(ans.count)))
             }
             s.insert(indx)
             if indx == correctAnswerIndex-1 {
@@ -37,7 +37,7 @@ class Question: Equatable, Hashable{
         self.explanation = explanation
     }
     
-    func getImageName() -> String {
+    func getImageName() -> String? {
         return imageName
     }
     

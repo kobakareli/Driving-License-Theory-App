@@ -73,7 +73,11 @@ class ExamViewController: UIViewController {
         didSet {
             if let q = question {
                 let imageName = q.getImageName()
-                image = UIImage(named: imageName)
+                if let imgName = imageName {
+                    image = UIImage(named: imgName)
+                } else {
+                    image = nil
+                }
             }
         }
     }
@@ -164,7 +168,7 @@ class ExamViewController: UIViewController {
         if indexPath.row >= offset {
             if let cell = tableView.dequeueReusableCellWithIdentifier("answer", forIndexPath: indexPath) as UITableViewCell? {
                 cell.backgroundColor = cell.contentView.backgroundColor
-                cell.textLabel?.text = question?.getAnswers()[indexPath.row-2]
+                cell.textLabel?.text = question?.getAnswers()[indexPath.row-offset]
                 cell.textLabel?.backgroundColor = defaultColor
                 cell.textLabel?.numberOfLines = 0
                 cell.textLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping

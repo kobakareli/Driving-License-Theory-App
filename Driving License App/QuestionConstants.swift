@@ -11,7 +11,7 @@ import Foundation
 
 class QuestionConstants {
     
-    static let numberOfQuestions = 1
+    static let numberOfQuestions = 32
     static let categoryNames : [String] = [
         "მძღოლის, მგზავრის და ქვეითის მოვალეობა, საცნობი ნიშნები, კონვენცია",
         "უწესივრობა და პირობები, რომელთა დროს აკრძალულია სატრანსპორტო საშუალების ექსპლუატაცია",

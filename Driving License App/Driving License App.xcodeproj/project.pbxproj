@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		010B4E9D1C46339C008BAB3D /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4E9C1C46339C008BAB3D /* EndViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		010B4E9F1C4635F8008BAB3D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4E9E1C4635F8008BAB3D /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		010B4EA11C4666A5008BAB3D /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4EA01C4666A5008BAB3D /* NoteViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		010B4E9D1C46339C008BAB3D /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4E9C1C46339C008BAB3D /* EndViewController.swift */; };
+		010B4E9F1C4635F8008BAB3D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4E9E1C4635F8008BAB3D /* SettingsViewController.swift */; };
+		010B4EA11C4666A5008BAB3D /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4EA01C4666A5008BAB3D /* NoteViewController.swift */; };
 		0110BB741C3E5EC800688BC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110BB731C3E5EC800688BC3 /* AppDelegate.swift */; };
 		0110BB761C3E5EC800688BC3 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110BB751C3E5EC800688BC3 /* LicenseViewController.swift */; };
 		0110BB791C3E5EC800688BC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0110BB771C3E5EC800688BC3 /* Main.storyboard */; };
@@ -23,13 +23,13 @@
 		019F78DD1C44055300440DEC /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019F78DC1C44055300440DEC /* Simulator.swift */; };
 		01E1835A1C40F553001DD804 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E183591C40F553001DD804 /* CategoryTableViewController.swift */; };
 		01E1835E1C41158E001DD804 /* StatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E1835D1C41158E001DD804 /* StatTableViewController.swift */; };
-		83183F131C46D759002898E7 /* DataModel.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 83183F121C46D759002898E7 /* DataModel.sqlite */; };
 		832733B01C448A1900A48524 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832733AF1C448A1800A48524 /* CoreData.framework */; };
 		832733B31C448B2B00A48524 /* QuestionModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 832733B11C448B2B00A48524 /* QuestionModel.xcdatamodeld */; };
 		835BC9211C45105200F495F1 /* QuestionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835BC9201C45105200F495F1 /* QuestionConstants.swift */; };
 		838D35811C4199680040FE27 /* TheoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838D35801C4199680040FE27 /* TheoryViewController.swift */; };
 		838D35831C41B4870040FE27 /* Theory in Resources */ = {isa = PBXBuildFile; fileRef = 838D35821C41B4860040FE27 /* Theory */; };
 		838D35871C41BBAC0040FE27 /* TheoryPdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */; };
+		83D2DBA91C4843A000B47892 /* DataModel.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 83D2DBA81C4843A000B47892 /* DataModel.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,13 +72,13 @@
 		019F78DC1C44055300440DEC /* Simulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulator.swift; sourceTree = "<group>"; };
 		01E183591C40F553001DD804 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		01E1835D1C41158E001DD804 /* StatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatTableViewController.swift; sourceTree = "<group>"; };
-		83183F121C46D759002898E7 /* DataModel.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = DataModel.sqlite; path = ../DataModel.sqlite; sourceTree = "<group>"; };
 		832733AF1C448A1800A48524 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		832733B21C448B2B00A48524 /* QuestionModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuestionModel.xcdatamodel; sourceTree = "<group>"; };
 		835BC9201C45105200F495F1 /* QuestionConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionConstants.swift; path = ../QuestionConstants.swift; sourceTree = "<group>"; };
 		838D35801C4199680040FE27 /* TheoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheoryViewController.swift; sourceTree = "<group>"; };
 		838D35821C41B4860040FE27 /* Theory */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Theory; sourceTree = "<group>"; };
 		838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheoryPdfViewController.swift; sourceTree = "<group>"; };
+		83D2DBA81C4843A000B47892 /* DataModel.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataModel.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,7 @@
 		0110BB721C3E5EC800688BC3 /* Driving License App */ = {
 			isa = PBXGroup;
 			children = (
-				83183F121C46D759002898E7 /* DataModel.sqlite */,
+				83D2DBA81C4843A000B47892 /* DataModel.sqlite */,
 				835BC9201C45105200F495F1 /* QuestionConstants.swift */,
 				832733B11C448B2B00A48524 /* QuestionModel.xcdatamodeld */,
 				838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */,
@@ -280,7 +280,7 @@
 				0110BB7E1C3E5EC800688BC3 /* LaunchScreen.storyboard in Resources */,
 				838D35831C41B4870040FE27 /* Theory in Resources */,
 				0110BB7B1C3E5EC800688BC3 /* Assets.xcassets in Resources */,
-				83183F131C46D759002898E7 /* DataModel.sqlite in Resources */,
+				83D2DBA91C4843A000B47892 /* DataModel.sqlite in Resources */,
 				0110BB791C3E5EC800688BC3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
