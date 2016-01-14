@@ -13,35 +13,43 @@ class TheoryPdfViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationItem.title = fileName
-        
+        loadPdf()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        setCorrectPage()
+    }
+    
+    @IBOutlet weak var webView: UIWebView!
+    
+    private func loadPdf(){
         fileName = "Theory/" + fileName
         fileName = NSBundle.mainBundle().pathForResource(fileName, ofType: "pdf")!
         
         let url = NSURL.fileURLWithPath(fileName)
         self.webView.loadRequest(NSURLRequest(URL: url))
         self.webView.scalesPageToFit = true
-        
-        // Do any additional setup after loading the view.
     }
     
-    @IBOutlet weak var webView: UIWebView!
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func setCorrectPage(){
+        if NSUserDefaults.standardUserDefaults().objectForKey(fileName + "x") == nil {
+            saveCurrentOffset()
+        }
+        let point : CGPoint = CGPoint(x: CGFloat((NSUserDefaults.standardUserDefaults().objectForKey(fileName + "x") as! Float)),
+            y: CGFloat((NSUserDefaults.standardUserDefaults().objectForKey(fileName + "y") as! Float)))
+        self.webView.scrollView.setContentOffset(point, animated: true)
     }
     
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveCurrentOffset()
     }
-    */
+    
+    private func saveCurrentOffset(){
+        NSUserDefaults.standardUserDefaults().setFloat(Float(self.webView.scrollView.contentOffset.y), forKey: fileName + "y")
+        NSUserDefaults.standardUserDefaults().setFloat(Float(self.webView.scrollView.contentOffset.x), forKey: fileName + "x")
+    }
     
 }
