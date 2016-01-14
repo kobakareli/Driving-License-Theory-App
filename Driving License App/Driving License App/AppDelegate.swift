@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fatalError("Error migrating store: \(error)")
         }
         
-        //migrating pregenerated database to app database
+        //migrating pregenerated database to app database (this must happen only first time TODO)
         let fileManager: NSFileManager = NSFileManager.defaultManager()
         var fileURL: NSURL? = nil
         let docPath: String = docURL.path!
