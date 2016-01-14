@@ -27,9 +27,11 @@ class CategoryTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath)
+        cell.backgroundColor = cell.contentView.backgroundColor
         let rowId : NSInteger = indexPath.row
         cell.textLabel?.text = QuestionConstants.categoryNames[rowId]
-        cell.textLabel?.numberOfLines = 3
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         cell.textLabel?.adjustsFontSizeToFitWidth = true
         return cell
     }
@@ -38,7 +40,13 @@ class CategoryTableViewController: UITableViewController {
         return "აირჩიეთ კატეგორია"
     }
     
-   override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 80
+        }
+        if indexPath.row == 1 {
+            return 100
+        }
         return UITableViewAutomaticDimension
     }
     

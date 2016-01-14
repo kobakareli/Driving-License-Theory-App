@@ -63,7 +63,12 @@ class Simulator {
             fetchRequest.predicate = NSPredicate(format: "questionID == %d", id)
             do {
                 let results = try managedContext.executeFetchRequest(fetchRequest)
-                chosenQuestion = (results as! [NSManagedObject])[0]
+                if results.count > 0 {
+                    chosenQuestion = (results as! [NSManagedObject])[0]
+                }
+                else {
+                    chosenQuestion = nil
+                }
             } catch let error as NSError {
                 print("Could not fetch \(error), \(error.userInfo)")
                 return nil
@@ -71,27 +76,28 @@ class Simulator {
         }
         
         do {
-            
-            let imagename : String = chosenQuestion!.valueForKey("imageName") as! String
-            let explanation : String = chosenQuestion!.valueForKey("explanation") as! String
-            let questionText : String = chosenQuestion!.valueForKey("question") as! String
-            let correctAnswerIndex : Int = chosenQuestion!.valueForKey("correctID") as! Int
-            let category : String = chosenQuestion!.valueForKey("category") as! String
-            let numberOfAnswers : Int = chosenQuestion!.valueForKey("numberOfAnswers") as! Int
-            
-            var answersArray : [String] = []
-            for i in 1...numberOfAnswers {
-                answersArray.append(chosenQuestion!.valueForKey("ans\(i)") as! String)
-            }
-            
-            let question = Question(imagename: imagename, questionText: questionText, answersArray: answersArray, correctAnswerIndex: correctAnswerIndex, category: category, explanation : explanation)
-            
-            while usedQuestions.contains(question) {
-                //return another question
-                return question // TODO when we add many questions, then we will change it
+            var question : Question? = nil
+            if chosenQuestion != nil {
+                let imagename : String = chosenQuestion!.valueForKey("imageName") as! String
+                let explanation : String = chosenQuestion!.valueForKey("explanation") as! String
+                let questionText : String = chosenQuestion!.valueForKey("question") as! String
+                let correctAnswerIndex : Int = chosenQuestion!.valueForKey("correctID") as! Int
+                let category : String = chosenQuestion!.valueForKey("category") as! String
+                let numberOfAnswers : Int = chosenQuestion!.valueForKey("numberOfAnswers") as! Int
+                
+                var answersArray : [String] = []
+                for i in 1...numberOfAnswers {
+                    answersArray.append(chosenQuestion!.valueForKey("ans\(i)") as! String)
+                }
+                
+                question = Question(imagename: imagename, questionText: questionText, answersArray: answersArray, correctAnswerIndex: correctAnswerIndex, category: category, explanation : explanation)
+                
+                while usedQuestions.contains(question!) {
+                    //return another question
+                    return question // TODO when we add many questions, then we will change it
+                }
             }
             return question
-            
         }
         
     }

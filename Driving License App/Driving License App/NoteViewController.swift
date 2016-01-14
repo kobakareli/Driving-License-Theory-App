@@ -16,8 +16,8 @@ class NoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        explenation.numberOfLines = 20
-        explenation.adjustsFontSizeToFitWidth = true
+        explenation.numberOfLines = 0
+        explenation.lineBreakMode = NSLineBreakMode.ByWordWrapping
         explenation.text = questionExplenation
     }
 

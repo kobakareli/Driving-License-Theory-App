@@ -94,6 +94,8 @@ class ExamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
         if examMode {
             timeCount = minutes*60
             myTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("elapse"), userInfo: nil, repeats: true)
@@ -103,7 +105,6 @@ class ExamViewController: UIViewController {
             numberOfQuestions = s.getNumberOfQuestions()
         }
     }
-    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -127,6 +128,7 @@ class ExamViewController: UIViewController {
         if let _ = image {
             if indexPath.row == 0 {
                 if let cell = tableView.dequeueReusableCellWithIdentifier("image", forIndexPath: indexPath) as UITableViewCell? {
+                    cell.backgroundColor = cell.contentView.backgroundColor
                     cell.imageView?.image = image
                     c = cell
                 }
@@ -134,18 +136,20 @@ class ExamViewController: UIViewController {
         }
         if indexPath.row == offset-1 {
             if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
+                cell.backgroundColor = cell.contentView.backgroundColor
                 defaultColor = (cell.textLabel?.backgroundColor)!
                 cell.textLabel?.text = question?.getQuestion()
-                cell.textLabel?.numberOfLines = 5
-                cell.textLabel?.adjustsFontSizeToFitWidth = true
+                cell.textLabel?.numberOfLines = 0
+                cell.textLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
                 c = cell
             }
         }
         if indexPath.row >= offset {
             if let cell = tableView.dequeueReusableCellWithIdentifier("answer", forIndexPath: indexPath) as UITableViewCell? {
+                cell.backgroundColor = cell.contentView.backgroundColor
                 cell.textLabel?.text = question?.getAnswers()[indexPath.row-2]
-                cell.textLabel?.numberOfLines = 5
-                cell.textLabel?.adjustsFontSizeToFitWidth = true
+                cell.textLabel?.numberOfLines = 0
+                cell.textLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
                 c = cell
                 answerCells.append(cell)
             }
@@ -174,12 +178,16 @@ class ExamViewController: UIViewController {
             if identifier == "end" {
                 if let destination = segue.destinationViewController as? EndViewController {
                     if wrongAnswersNum <= 3 && questionsAnswered == numberOfQuestions {
-                        StatTableViewController.stats[2] += 1
-                        StatTableViewController.stats[3] += 1
+                        if examMode == true {
+                            StatTableViewController.stats[2] += 1
+                            StatTableViewController.stats[3] += 1
+                        }
                         destination.passed = true
                     }
                     else {
-                        StatTableViewController.stats[3] += 1
+                        if examMode == true {
+                            StatTableViewController.stats[3] += 1
+                        }
                         destination.passed = false
                     }
                     NSUserDefaults.standardUserDefaults().setObject(StatTableViewController.stats, forKey: "LicenseStats")
