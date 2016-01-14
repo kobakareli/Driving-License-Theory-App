@@ -11,35 +11,49 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
     var managedObjectContext: NSManagedObjectContext
     override init() {
-        // This resource is the same name as your xcdatamodeld contained in your project.
+        // creating database
         guard let modelURL = NSBundle.mainBundle().URLForResource("QuestionModel", withExtension:"momd") else {
             fatalError("Error loading model from bundle")
         }
-        // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
         guard let mom = NSManagedObjectModel(contentsOfURL: modelURL) else {
             fatalError("Error initializing mom from: \(modelURL)")
         }
         let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
         self.managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
         self.managedObjectContext.persistentStoreCoordinator = psc
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-            let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-            let docURL = urls[urls.endIndex-1]
-            /* The directory the application uses to store the Core Data store file.
-            This code uses a file named "DataModel.sqlite" in the application's documents directory.
-            */
-            let storeURL = docURL.URLByAppendingPathComponent("DataModel.sqlite")
-            do {
-                try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
-            } catch {
-                fatalError("Error migrating store: \(error)")
-            }
+        
+        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let docURL = urls[urls.endIndex-1]
+        
+        let storeURL = docURL.URLByAppendingPathComponent("DataModel.sqlite")
+        print(storeURL)
+        do {
+            try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
+        } catch {
+            fatalError("Error migrating store: \(error)")
         }
+        
+        //migrating pregenerated database to app database
+        let fileManager: NSFileManager = NSFileManager.defaultManager()
+        var fileURL: NSURL? = nil
+        let docPath: String = docURL.path!
+        fileURL = NSURL(string: "DeepLink://" + docPath.stringByAppendingPathComponent("DataModel.sqlite"))!
+        
+        let bundleDbPath: String = NSBundle.mainBundle().pathForResource("DataModel", ofType: "sqlite")!
+        do {
+            try fileManager.replaceItemAtURL(fileURL!, withItemAtURL: NSURL(fileURLWithPath : bundleDbPath),
+                    backupItemName: nil, options: NSFileManagerItemReplacementOptions.UsingNewMetadataOnly,
+                    resultingItemURL: nil)
+                
+        } catch let error as NSError {
+            print("copyPreGeneratedData error : \(error) \(error.userInfo)")
+        }
+    
+        
     }
-
+    
     var window: UIWindow?
     
     
@@ -77,6 +91,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
+    
+    func deleteAllData(entity: String)
+    {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: entity)
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                managedContext.deleteObject(managedObjectData)
+            }
+        } catch let error as NSError {
+            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
+        }
+    }
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -87,8 +121,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //// This is not permanent, just to make it ready for the user, then we will delete it
         ///////
         
+        //deleteAllData("Question")
+        /*
         saveQuestion("ki", ans2: "albat", ans3: "ravi shen?", ans4: "ar var aqauri", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
-        
+        saveQuestion("ara", ans2: "ara", ans3: "ara", ans4: "ara", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
+        saveQuestion("ki", ans2: "ki", ans3: "ki", ans4: "ar var aqauri", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
+        saveQuestion("loso", ans2: "boso", ans3: "soso", ans4: "ar var aqauri", category: "პრიორიტეტის ნიშნები", correctID: 4, explanation: "geubnebi raa", imageName: "road2", numberOfAnswers: 4, questionn: "ra sargebloba moaqvs mamals?", questionID: 1)
+
+        */
+
         ///////
         
         return true
@@ -119,3 +160,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+extension String {
+    var lastPathComponent: String {
+        get {
+            return (self as NSString).lastPathComponent
+        }
+    }
+    var pathExtension: String {
+        get {
+            return (self as NSString).pathExtension
+        }
+    }
+    var stringByDeletingLastPathComponent: String {
+        get {
+            return (self as NSString).stringByDeletingLastPathComponent
+        }
+    }
+    var stringByDeletingPathExtension: String {
+        get {
+            return (self as NSString).stringByDeletingPathExtension
+        }
+    }
+    var pathComponents: [String] {
+        get {
+            return (self as NSString).pathComponents
+        }
+    }
+    func stringByAppendingPathComponent(path: String) -> String {
+        let nsSt = self as NSString
+        return nsSt.stringByAppendingPathComponent(path)
+    }
+    
+    func stringByAppendingPathExtension(ext: String) -> String? {
+        let nsSt = self as NSString
+        return nsSt.stringByAppendingPathExtension(ext)
+    }
+}
