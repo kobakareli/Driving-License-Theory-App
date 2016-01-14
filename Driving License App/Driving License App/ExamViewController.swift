@@ -15,6 +15,9 @@ class ExamViewController: UIViewController {
     var minutes = 30
     var simulator : Simulator? = nil
     var offset = 1
+    var defaultColor = UIColor()
+    private var answerCells = [UITableViewCell]()
+    private var answerSelected = false
     
     var numberOfQuestions = 0 {
         didSet {
@@ -22,7 +25,7 @@ class ExamViewController: UIViewController {
         }
     }
     
-    var image = UIImage(named: "road") {
+    var image = UIImage(named: "") {
         didSet {
             if let _ = image {
                 offset = 2
@@ -85,11 +88,14 @@ class ExamViewController: UIViewController {
         timeCount -= 1
         if timeCount == 0 {
             myTimer.invalidate()
+            performSegueWithIdentifier("end", sender: nil)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
         if examMode {
             timeCount = minutes*60
             myTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("elapse"), userInfo: nil, repeats: true)
@@ -100,7 +106,6 @@ class ExamViewController: UIViewController {
         }
     }
     
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -108,12 +113,12 @@ class ExamViewController: UIViewController {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        var count = 1
+        var count = 0
         if let _ = image {
             count += 1
         }
         if let q = question {
-            count += q.getAnswers().count
+            count += (q.getAnswers().count+1)
         }
         return count
     }
@@ -123,6 +128,7 @@ class ExamViewController: UIViewController {
         if let _ = image {
             if indexPath.row == 0 {
                 if let cell = tableView.dequeueReusableCellWithIdentifier("image", forIndexPath: indexPath) as UITableViewCell? {
+                    cell.backgroundColor = cell.contentView.backgroundColor
                     cell.imageView?.image = image
                     c = cell
                 }
@@ -130,18 +136,22 @@ class ExamViewController: UIViewController {
         }
         if indexPath.row == offset-1 {
             if let cell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as UITableViewCell? {
+                cell.backgroundColor = cell.contentView.backgroundColor
+                defaultColor = (cell.textLabel?.backgroundColor)!
                 cell.textLabel?.text = question?.getQuestion()
-                cell.textLabel?.numberOfLines = 5
-                cell.textLabel?.adjustsFontSizeToFitWidth = true
+                cell.textLabel?.numberOfLines = 0
+                cell.textLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
                 c = cell
             }
         }
         if indexPath.row >= offset {
             if let cell = tableView.dequeueReusableCellWithIdentifier("answer", forIndexPath: indexPath) as UITableViewCell? {
+                cell.backgroundColor = cell.contentView.backgroundColor
                 cell.textLabel?.text = question?.getAnswers()[indexPath.row-2]
-                cell.textLabel?.numberOfLines = 5
-                cell.textLabel?.adjustsFontSizeToFitWidth = true
+                cell.textLabel?.numberOfLines = 0
+                cell.textLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
                 c = cell
+                answerCells.append(cell)
             }
         }
         return c
@@ -155,7 +165,7 @@ class ExamViewController: UIViewController {
         }
         return UITableViewAutomaticDimension
     }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             if identifier == "image" {
@@ -165,27 +175,80 @@ class ExamViewController: UIViewController {
                     }
                 }
             }
+            if identifier == "end" {
+                if let destination = segue.destinationViewController as? EndViewController {
+                    if wrongAnswersNum <= 3 && questionsAnswered == numberOfQuestions {
+                        if examMode == true {
+                            StatTableViewController.stats[2] += 1
+                            StatTableViewController.stats[3] += 1
+                        }
+                        destination.passed = true
+                    }
+                    else {
+                        if examMode == true {
+                            StatTableViewController.stats[3] += 1
+                        }
+                        destination.passed = false
+                    }
+                    NSUserDefaults.standardUserDefaults().setObject(StatTableViewController.stats, forKey: "LicenseStats")
+                    NSUserDefaults.standardUserDefaults().setObject(StatTableViewController.categories, forKey: "LicenseCatStats")
+                }
+            }
+            if identifier == "note" {
+                if let destination = segue.destinationViewController as? NoteViewController {
+                    if let q = question {
+                        destination.questionExplenation = q.getExplanation()
+                    }
+                }
+            }
         }
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if identifier == "next" && questionsAnswered < numberOfQuestions-1 {
-            // get answer from the sender here, then generate new question
-            if let cell = sender as? UITableViewCell {
-                if let indexPath = tableView.indexPathForCell(cell) {
-                    if indexPath.row - offset == (question?.getCorrectAnswerIndex())! {
-                        cell.textLabel?.backgroundColor = UIColor.greenColor()
-                    }
-                    else {
-                        cell.textLabel?.backgroundColor = UIColor.redColor()
-                        wrongAnswersNum += 1
+        
+        if identifier == "end" && questionsAnswered < numberOfQuestions {
+            if answerSelected == true {
+                answerSelected = false
+                if wrongAnswersNum > 3 && examMode == true {
+                    return true
+                }
+                if SettingsViewController.settings[0] == true {
+                    if let q = question {
+                        answerCells[q.getCorrectAnswerIndex()-1].textLabel?.backgroundColor = defaultColor
                     }
                 }
+                answerCells = [UITableViewCell]()
                 question = simulator?.getNextQuestion()
-                questionsAnswered += 1
                 tableView.reloadData()
-                return false
             }
+            return false
+        }
+        if identifier == "next" {
+            if answerSelected == false {
+                if let cell = sender as? UITableViewCell {
+                    if let indexPath = tableView.indexPathForCell(cell) {
+                        if indexPath.row - offset == (question?.getCorrectAnswerIndex())!-1 {
+                            cell.textLabel?.backgroundColor = UIColor.greenColor()
+                            StatTableViewController.stats[0] += 1
+                            StatTableViewController.categories[(question?.getCategory())!]?[0] += 1
+                        }
+                        else {
+                            cell.textLabel?.backgroundColor = UIColor.redColor()
+                            if SettingsViewController.settings[0] == true {
+                                if let q = question {
+                                    answerCells[q.getCorrectAnswerIndex()-1].textLabel?.backgroundColor = UIColor.greenColor()
+                                }
+                            }
+                            wrongAnswersNum += 1
+                        }
+                    }
+                    StatTableViewController.stats[1] += 1
+                    StatTableViewController.categories[(question?.getCategory())!]?[1] += 1
+                    questionsAnswered += 1
+                    answerSelected = true
+                }
+            }
+            return false
         }
         return true
     }

@@ -12,7 +12,35 @@ class LicenseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let stored = NSUserDefaults.standardUserDefaults().arrayForKey("LicenseSettings") as? [Bool]
+        if stored == nil {
+            SettingsViewController.settings.append(true)
+            NSUserDefaults.standardUserDefaults().setObject(SettingsViewController.settings, forKey: "LicenseSettings")
+        }
+        else {
+            SettingsViewController.settings = stored!
+        }
+        let stats = NSUserDefaults.standardUserDefaults().arrayForKey("LicenseStats") as? [Int]
+        if stats == nil {
+            for var i = 0; i < 4; i++ {
+                StatTableViewController.stats.append(0)
+            }
+            NSUserDefaults.standardUserDefaults().setObject(StatTableViewController.stats, forKey: "LicenseStats")
+        }
+        else {
+            StatTableViewController.stats = stats!
+        }
+        let catStats = NSUserDefaults.standardUserDefaults().dictionaryForKey("LicenseCatStats") as? [String:[Int]]
+        if catStats == nil {
+            let arr = [0,0]
+            for cat in QuestionConstants.categoryNames {
+                StatTableViewController.categories[cat] = arr
+            }
+            NSUserDefaults.standardUserDefaults().setObject(StatTableViewController.categories, forKey: "LicenseCatStats")
+        }
+        else {
+            StatTableViewController.categories = catStats!
+        }
     }
 
     override func didReceiveMemoryWarning() {
