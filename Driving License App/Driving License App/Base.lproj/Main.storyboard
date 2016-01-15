@@ -505,27 +505,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="კითხვის განმარტება" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZW-Ax-htk">
-                                <rect key="frame" x="20" y="72" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeN-cb-Emc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEz-j7-s6C">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgV-JT-jSK">
+                                                <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ZgV-JT-jSK" secondAttribute="trailing" constant="8" id="12x-Lc-9Cy"/>
+                                            <constraint firstAttribute="height" constant="600" id="9Jq-rY-sdT"/>
+                                            <constraint firstItem="ZgV-JT-jSK" firstAttribute="top" secondItem="XEz-j7-s6C" secondAttribute="top" constant="8" id="G4S-NJ-ojH"/>
+                                            <constraint firstItem="ZgV-JT-jSK" firstAttribute="leading" secondItem="XEz-j7-s6C" secondAttribute="leading" constant="8" id="d23-ae-BZJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="XEz-j7-s6C" firstAttribute="top" secondItem="QeN-cb-Emc" secondAttribute="top" id="Lh8-9Z-faa"/>
+                                    <constraint firstAttribute="trailing" secondItem="XEz-j7-s6C" secondAttribute="trailing" id="RHi-3v-vHf"/>
+                                    <constraint firstItem="XEz-j7-s6C" firstAttribute="leading" secondItem="QeN-cb-Emc" secondAttribute="leading" id="VMI-so-FC7"/>
+                                    <constraint firstAttribute="bottom" secondItem="XEz-j7-s6C" secondAttribute="bottom" id="a8W-qA-WZX"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lZW-Ax-htk" firstAttribute="top" secondItem="4vU-TG-eqD" secondAttribute="bottom" constant="8" id="41f-R9-bYW"/>
-                            <constraint firstItem="lZW-Ax-htk" firstAttribute="trailing" secondItem="f6D-sv-jjP" secondAttribute="trailingMargin" id="D6E-qO-bnZ"/>
-                            <constraint firstItem="lZW-Ax-htk" firstAttribute="leading" secondItem="f6D-sv-jjP" secondAttribute="leadingMargin" id="XnU-rJ-GY7"/>
+                            <constraint firstItem="QeN-cb-Emc" firstAttribute="top" secondItem="f6D-sv-jjP" secondAttribute="topMargin" id="fwO-Hc-eXF"/>
+                            <constraint firstItem="Ov8-2A-YW6" firstAttribute="top" secondItem="QeN-cb-Emc" secondAttribute="bottom" id="kF1-qh-xRx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QeN-cb-Emc" secondAttribute="trailing" constant="-20" id="lM3-qr-pjT"/>
+                            <constraint firstItem="QeN-cb-Emc" firstAttribute="leading" secondItem="f6D-sv-jjP" secondAttribute="leadingMargin" constant="-20" id="mzc-Uu-Dwz"/>
+                            <constraint firstItem="XEz-j7-s6C" firstAttribute="width" secondItem="f6D-sv-jjP" secondAttribute="width" id="u7F-r8-1z9"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="explenation" destination="lZW-Ax-htk" id="NK9-Uv-zNS"/>
+                        <outlet property="explenation" destination="ZgV-JT-jSK" id="XAx-Zb-0Lr"/>
+                        <outlet property="scrollView" destination="QeN-cb-Emc" id="IbN-By-3U9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Q7-z2-DUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4748" y="365"/>
+            <point key="canvasLocation" x="4743" y="365"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="oRd-Jg-asx">
@@ -595,13 +621,15 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Xrt-3O-3Xd" firstAttribute="top" secondItem="lk6-14-QLW" secondAttribute="topMargin" id="9Lp-KZ-RS3"/>
-                                        <constraint firstItem="Xrt-3O-3Xd" firstAttribute="trailing" secondItem="lk6-14-QLW" secondAttribute="trailingMargin" id="Pxg-t2-XN7"/>
-                                        <constraint firstItem="Xrt-3O-3Xd" firstAttribute="leading" secondItem="lk6-14-QLW" secondAttribute="leadingMargin" id="p1k-26-OW0"/>
+                                        <constraint firstItem="Xrt-3O-3Xd" firstAttribute="leading" secondItem="lk6-14-QLW" secondAttribute="leadingMargin" id="4tY-1s-qfL"/>
+                                        <constraint firstItem="Xrt-3O-3Xd" firstAttribute="bottom" secondItem="lk6-14-QLW" secondAttribute="bottomMargin" id="6Oy-5K-aNh"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Xrt-3O-3Xd" secondAttribute="trailing" id="NI1-3s-cMc"/>
+                                        <constraint firstItem="Xrt-3O-3Xd" firstAttribute="top" secondItem="lk6-14-QLW" secondAttribute="topMargin" id="mm1-Ii-FR4"/>
                                         <constraint firstItem="Xrt-3O-3Xd" firstAttribute="bottom" secondItem="lk6-14-QLW" secondAttribute="bottomMargin" id="zFS-ve-X1c"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="6Oy-5K-aNh"/>
                                             <exclude reference="zFS-ve-X1c"/>
                                         </mask>
                                     </variation>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010057A81C491EC00091634D /* DataModel.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 010057A71C491EC00091634D /* DataModel.sqlite */; settings = {ASSET_TAGS = (); }; };
 		010B4E9D1C46339C008BAB3D /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4E9C1C46339C008BAB3D /* EndViewController.swift */; };
 		010B4E9F1C4635F8008BAB3D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4E9E1C4635F8008BAB3D /* SettingsViewController.swift */; };
 		010B4EA11C4666A5008BAB3D /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B4EA01C4666A5008BAB3D /* NoteViewController.swift */; };
@@ -29,7 +30,6 @@
 		838D35811C4199680040FE27 /* TheoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838D35801C4199680040FE27 /* TheoryViewController.swift */; };
 		838D35831C41B4870040FE27 /* Theory in Resources */ = {isa = PBXBuildFile; fileRef = 838D35821C41B4860040FE27 /* Theory */; };
 		838D35871C41BBAC0040FE27 /* TheoryPdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */; };
-		83D2DBA91C4843A000B47892 /* DataModel.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 83D2DBA81C4843A000B47892 /* DataModel.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010057A51C491AD00091634D /* DataModel.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataModel.sqlite; sourceTree = "<group>"; };
+		010057A71C491EC00091634D /* DataModel.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataModel.sqlite; sourceTree = "<group>"; };
 		010B4E9C1C46339C008BAB3D /* EndViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
 		010B4E9E1C4635F8008BAB3D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		010B4EA01C4666A5008BAB3D /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +80,6 @@
 		838D35801C4199680040FE27 /* TheoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheoryViewController.swift; sourceTree = "<group>"; };
 		838D35821C41B4860040FE27 /* Theory */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Theory; sourceTree = "<group>"; };
 		838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheoryPdfViewController.swift; sourceTree = "<group>"; };
-		83D2DBA81C4843A000B47892 /* DataModel.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataModel.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,10 +132,11 @@
 		0110BB721C3E5EC800688BC3 /* Driving License App */ = {
 			isa = PBXGroup;
 			children = (
-				83D2DBA81C4843A000B47892 /* DataModel.sqlite */,
+				010057A51C491AD00091634D /* DataModel.sqlite */,
 				835BC9201C45105200F495F1 /* QuestionConstants.swift */,
 				832733B11C448B2B00A48524 /* QuestionModel.xcdatamodeld */,
 				838D35861C41BBAC0040FE27 /* TheoryPdfViewController.swift */,
+				010057A71C491EC00091634D /* DataModel.sqlite */,
 				0110BB751C3E5EC800688BC3 /* LicenseViewController.swift */,
 				010B4EA01C4666A5008BAB3D /* NoteViewController.swift */,
 				0110BB771C3E5EC800688BC3 /* Main.storyboard */,
@@ -278,9 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0110BB7E1C3E5EC800688BC3 /* LaunchScreen.storyboard in Resources */,
+				010057A81C491EC00091634D /* DataModel.sqlite in Resources */,
 				838D35831C41B4870040FE27 /* Theory in Resources */,
 				0110BB7B1C3E5EC800688BC3 /* Assets.xcassets in Resources */,
-				83D2DBA91C4843A000B47892 /* DataModel.sqlite in Resources */,
 				0110BB791C3E5EC800688BC3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

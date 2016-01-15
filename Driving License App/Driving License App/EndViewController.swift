@@ -13,17 +13,20 @@ class EndViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     
     var passed = false
+    var examMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if passed == true {
+        if passed == true && examMode{
             label.text = "თქვენ წარმატებით გაიარეთ გამოცდა"
             self.view.backgroundColor = UIColor.greenColor()
         }
-        else {
+        else if passed == false && examMode{
             label.text = "თქვენ ვერ ჩააბარეთ გამოცდა"
             self.view.backgroundColor = UIColor.redColor()
         }
-
+        else {
+            label.text = "არჩეული კატეგორიის კითხვები ამოიწურა"
+        }
     }
 }

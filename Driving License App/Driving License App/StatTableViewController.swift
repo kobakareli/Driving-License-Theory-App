@@ -56,7 +56,7 @@ class StatTableViewController: UITableViewController {
                 cell.detailTextLabel?.text = "0%"
             }
             else {
-                cell.detailTextLabel?.text = "\(Double(StatTableViewController.stats[0])/Double(StatTableViewController.stats[1])*100)%"
+                cell.detailTextLabel?.text = "\(round(100*Double(StatTableViewController.stats[0])/Double(StatTableViewController.stats[1])*100)/100)%"
             }
         }
         else if indexPath.row == 1 && indexPath.section == 0{
@@ -65,7 +65,7 @@ class StatTableViewController: UITableViewController {
                 cell.detailTextLabel?.text = "0%"
             }
             else {
-                cell.detailTextLabel?.text = "\(Double(StatTableViewController.stats[2])/Double(StatTableViewController.stats[3])*100)%"
+                cell.detailTextLabel?.text = "\(round(100*Double(StatTableViewController.stats[2])/Double(StatTableViewController.stats[3])*100)/100)%"
             }
         }
         
@@ -76,7 +76,7 @@ class StatTableViewController: UITableViewController {
                 cell.detailTextLabel?.text = "0%"
             }
             else {
-                cell.detailTextLabel?.text = "\(Double((StatTableViewController.categories[categoryName]?[0])!)/Double((StatTableViewController.categories[categoryName]?[1])!)*100)%"
+                cell.detailTextLabel?.text = "\(round(100*Double((StatTableViewController.categories[categoryName]?[0])!)/Double((StatTableViewController.categories[categoryName]?[1])!)*100)/100)%"
             }
         }
 

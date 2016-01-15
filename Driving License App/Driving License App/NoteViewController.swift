@@ -9,9 +9,10 @@
 import UIKit
 
 class NoteViewController: UIViewController {
-
+    
     @IBOutlet weak var explenation: UILabel!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     var questionExplenation = ""
     
     override func viewDidLoad() {
@@ -19,6 +20,7 @@ class NoteViewController: UIViewController {
         explenation.numberOfLines = 0
         explenation.lineBreakMode = NSLineBreakMode.ByWordWrapping
         explenation.text = questionExplenation
+        scrollView.contentSize = explenation.superview!.frame.size
     }
 
 }

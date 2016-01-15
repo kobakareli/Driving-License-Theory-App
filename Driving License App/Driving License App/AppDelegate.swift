@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var managedObjectContext: NSManagedObjectContext
     override init() {
         // creating database
+
         guard let modelURL = NSBundle.mainBundle().URLForResource("QuestionModel", withExtension:"momd") else {
             fatalError("Error loading model from bundle")
         }
@@ -35,20 +36,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fatalError("Error migrating store: \(error)")
         }
         
-        //migrating pregenerated database to app database (this must happen only first time TODO)
-        let fileManager: NSFileManager = NSFileManager.defaultManager()
-        var fileURL: NSURL? = nil
-        let docPath: String = docURL.path!
-        fileURL = NSURL(string: "DeepLink://" + docPath.stringByAppendingPathComponent("DataModel.sqlite"))!
+        //migrating pregenerated database to app database (this must happen only first time)
         
-        let bundleDbPath: String = NSBundle.mainBundle().pathForResource("DataModel", ofType: "sqlite")!
-        do {
-            try fileManager.replaceItemAtURL(fileURL!, withItemAtURL: NSURL(fileURLWithPath : bundleDbPath),
+        let baseLoaded = NSUserDefaults.standardUserDefaults().arrayForKey("LicenseBase") as? [Bool]
+        if baseLoaded == nil {
+            let fileManager: NSFileManager = NSFileManager.defaultManager()
+            var fileURL: NSURL? = nil
+            let docPath: String = docURL.path!
+            fileURL = NSURL(string: "DeepLink://" + docPath.stringByAppendingPathComponent("DataModel.sqlite"))!
+            
+            let bundleDbPath: String = NSBundle.mainBundle().pathForResource("DataModel", ofType: "sqlite")!
+            do {
+                try fileManager.replaceItemAtURL(fileURL!, withItemAtURL: NSURL(fileURLWithPath : bundleDbPath),
                     backupItemName: nil, options: NSFileManagerItemReplacementOptions.UsingNewMetadataOnly,
                     resultingItemURL: nil)
                 
-        } catch let error as NSError {
-            print("copyPreGeneratedData error : \(error) \(error.userInfo)")
+            } catch let error as NSError {
+                print("copyPreGeneratedData error : \(error) \(error.userInfo)")
+            }
+            let isBaseLoaded = [true]
+            NSUserDefaults.standardUserDefaults().setObject(isBaseLoaded, forKey: "LicenseBase")
         }
         
         

@@ -114,9 +114,9 @@ class ExamViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if answerSelected {
-            selectedCell.textLabel?.backgroundColor = UIColor.redColor()
+            selectedCell.contentView.backgroundColor = UIColor.redColor()
             if let _ = correctCell {
-                correctCell!.textLabel?.backgroundColor = UIColor.greenColor()
+                correctCell!.contentView.backgroundColor = UIColor.greenColor()
             }
         }
     }
@@ -169,20 +169,20 @@ class ExamViewController: UIViewController {
             if let cell = tableView.dequeueReusableCellWithIdentifier("answer", forIndexPath: indexPath) as UITableViewCell? {
                 cell.backgroundColor = cell.contentView.backgroundColor
                 cell.textLabel?.text = question?.getAnswers()[indexPath.row-offset]
-                cell.textLabel?.backgroundColor = defaultColor
+                cell.contentView.backgroundColor = defaultColor
                 cell.textLabel?.numberOfLines = 0
                 cell.textLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
                 if let q = question {
                     if (indexPath.row - offset+1) == q.getCorrectAnswerIndex() {
                         correctCell = cell
                         if answerSelected == true {
-                            cell.textLabel?.backgroundColor = UIColor.greenColor()
+                            cell.contentView.backgroundColor = UIColor.greenColor()
                         }
                     }
                     
                 }
                 if answerSelected && cell == selectedCell {
-                    cell.textLabel?.backgroundColor = UIColor.redColor()
+                    cell.contentView.backgroundColor = UIColor.redColor()
                 }
                 c = cell
             }
@@ -192,11 +192,9 @@ class ExamViewController: UIViewController {
     
     func tableView(tableView : UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         if answerSelected {
-            selectedCell.textLabel?.backgroundColor = UIColor.redColor()
+            selectedCell.contentView.backgroundColor = UIColor.redColor()
             /*if let _ = correctCell {
-                correctCell!.textLabel?.backgroundColor = UIColor.greenColor()
-                let s = correctCell!.textLabel?.text
-                let i = indexPath.row
+                correctCell!.contentView.backgroundColor = UIColor.greenColor()
             }*/
         }
         if offset == 2 && indexPath.row == 0 && questionIndexPath != nil {
@@ -267,7 +265,7 @@ class ExamViewController: UIViewController {
                 }
                 if SettingsViewController.settings[0] == true {
                     if let _ = correctCell {
-                        correctCell!.textLabel?.backgroundColor = defaultColor
+                        correctCell!.contentView.backgroundColor = defaultColor
                     }
                 }
                 question = simulator?.getNextQuestion()
@@ -281,16 +279,16 @@ class ExamViewController: UIViewController {
                     if let indexPath = tableView.indexPathForCell(cell) {
                         if indexPath.row - offset == (question?.getCorrectAnswerIndex())!-1 {
                             correctCell = cell
-                            cell.textLabel?.backgroundColor = UIColor.greenColor()
+                            cell.contentView.backgroundColor = UIColor.greenColor()
                             StatTableViewController.stats[0] += 1
                             StatTableViewController.categories[(question?.getCategory())!]?[0] += 1
                         }
                         else {
                             selectedCell = cell
-                            cell.textLabel?.backgroundColor = UIColor.redColor()
+                            cell.contentView.backgroundColor = UIColor.redColor()
                             if SettingsViewController.settings[0] == true {
                                 if let _ = correctCell {
-                                    correctCell!.textLabel?.backgroundColor = UIColor.greenColor()
+                                    correctCell!.contentView.backgroundColor = UIColor.greenColor()
                                 }
                             }
                             wrongAnswersNum += 1
@@ -303,6 +301,9 @@ class ExamViewController: UIViewController {
                 }
             }
             return false
+        }
+        if identifier == "note" {
+            return answerSelected
         }
         return true
     }
