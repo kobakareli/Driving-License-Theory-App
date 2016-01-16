@@ -193,9 +193,6 @@ class ExamViewController: UIViewController {
     func tableView(tableView : UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         if answerSelected {
             selectedCell.contentView.backgroundColor = UIColor.redColor()
-            /*if let _ = correctCell {
-                correctCell!.contentView.backgroundColor = UIColor.greenColor()
-            }*/
         }
         if offset == 2 && indexPath.row == 0 && questionIndexPath != nil {
             tableView.selectRowAtIndexPath(questionIndexPath, animated: false, scrollPosition: .None)
@@ -257,9 +254,6 @@ class ExamViewController: UIViewController {
         
         if identifier == "end" && questionsAnswered < numberOfQuestions {
             if answerSelected == true {
-                answerSelected = false
-                selectedCell = UITableViewCell()
-                correctCell = nil
                 if wrongAnswersNum > 3 && examMode == true {
                     return true
                 }
@@ -268,6 +262,9 @@ class ExamViewController: UIViewController {
                         correctCell!.contentView.backgroundColor = defaultColor
                     }
                 }
+                answerSelected = false
+                selectedCell = UITableViewCell()
+                correctCell = nil
                 question = simulator?.getNextQuestion()
                 tableView.reloadData()
             }
@@ -288,7 +285,9 @@ class ExamViewController: UIViewController {
                             cell.contentView.backgroundColor = UIColor.redColor()
                             if SettingsViewController.settings[0] == true {
                                 if let _ = correctCell {
-                                    correctCell!.contentView.backgroundColor = UIColor.greenColor()
+                                    if (tableView.indexPathForCell(correctCell!)!.row - offset+1) == question!.getCorrectAnswerIndex() {
+                                        correctCell!.contentView.backgroundColor = UIColor.greenColor()
+                                    }
                                 }
                             }
                             wrongAnswersNum += 1
