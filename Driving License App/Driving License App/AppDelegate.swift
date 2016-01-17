@@ -28,13 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         let docURL = urls[urls.endIndex-1]
         
-        let storeURL = docURL.URLByAppendingPathComponent("DataModel.sqlite")
-        print(storeURL)
-        do {
-            try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
-        } catch {
-            fatalError("Error migrating store: \(error)")
-        }
+        
         
         //migrating pregenerated database to app database (this must happen only first time)
         
@@ -58,6 +52,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSUserDefaults.standardUserDefaults().setObject(isBaseLoaded, forKey: "LicenseBase")
         }
         
+        
+        // adding persistant store
+        let storeURL = docURL.URLByAppendingPathComponent("DataModel.sqlite")
+        print(storeURL)
+        do {
+            try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
+        } catch {
+            fatalError("Error migrating store: \(error)")
+        }
         
     }
     
