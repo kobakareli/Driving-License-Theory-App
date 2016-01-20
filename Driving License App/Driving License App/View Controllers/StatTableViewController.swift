@@ -21,6 +21,8 @@ class StatTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -30,10 +32,10 @@ class StatTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "General Stats:"
+            return "ზოგადი სტატისტიკა:"
         }
         else {
-            return "Category Answer Percentage:"
+            return "პასუხები კატეგორიის მიხედვით:"
         }
     }
 
@@ -50,8 +52,9 @@ class StatTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("stat", forIndexPath: indexPath)
 
+        cell.textLabel?.numberOfLines = 0
         if indexPath.row == 0 && indexPath.section == 0 {
-            cell.textLabel?.text = "Correct Answers"
+            cell.textLabel?.text = "სწორი პასუხები"
             if StatTableViewController.stats[1] == 0 {
                 cell.detailTextLabel?.text = "0%"
             }
@@ -60,7 +63,7 @@ class StatTableViewController: UITableViewController {
             }
         }
         else if indexPath.row == 1 && indexPath.section == 0{
-            cell.textLabel?.text = "Passed Exams"
+            cell.textLabel?.text = "ჩაბარებული გამოცდები"
             if StatTableViewController.stats[3] == 0 {
                 cell.detailTextLabel?.text = "0%"
             }
@@ -70,7 +73,7 @@ class StatTableViewController: UITableViewController {
         }
         
         if indexPath.section == 1 {
-            cell.textLabel?.text = "Category \(indexPath.row+1)"
+            cell.textLabel?.text = "კატეგორია \(indexPath.row+1)"
             let categoryName = QuestionConstants.categoryNames[indexPath.row]
             if StatTableViewController.categories[categoryName]?[1] == 0 {
                 cell.detailTextLabel?.text = "0%"

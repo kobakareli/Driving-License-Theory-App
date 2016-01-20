@@ -236,7 +236,6 @@ class ExamViewController: UIViewController {
                         }
                         destination.passed = false
                     }
-                    destination.examMode = examMode
                     NSUserDefaults.standardUserDefaults().setObject(StatTableViewController.stats, forKey: "LicenseStats")
                     NSUserDefaults.standardUserDefaults().setObject(StatTableViewController.categories, forKey: "LicenseCatStats")
                 }
@@ -286,10 +285,8 @@ class ExamViewController: UIViewController {
                             cell.contentView.backgroundColor = UIColor.redColor()
                             if SettingsViewController.settings[0] == true {
                                 if let _ = correctCell {
-                                    if let ip = tableView.indexPathForCell(correctCell!) {
-                                        if ip.row - offset+1 == question!.getCorrectAnswerIndex() {
-                                            correctCell!.contentView.backgroundColor = UIColor.greenColor()
-                                        }
+                                    if (tableView.indexPathForCell(correctCell!)!.row - offset+1) == question!.getCorrectAnswerIndex() {
+                                        correctCell!.contentView.backgroundColor = UIColor.greenColor()
                                     }
                                 }
                             }
