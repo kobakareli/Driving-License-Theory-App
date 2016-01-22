@@ -287,9 +287,9 @@ class ExamViewController: UIViewController {
                             if SettingsViewController.settings[0] == true {
                                 if let _ = correctCell {
                                     if let ip = tableView.indexPathForCell(correctCell!) {
- -                                        if ip.row - offset+1 == question!.getCorrectAnswerIndex() {
- -                                            correctCell!.contentView.backgroundColor = UIColor.greenColor()
- -                                        }
+ if ip.row - offset+1 == question!.getCorrectAnswerIndex() {
+ correctCell!.contentView.backgroundColor = UIColor.greenColor()
+                                         }
                                     }
                                 }
                             }
